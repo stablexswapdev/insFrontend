@@ -98,7 +98,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
   background: none;
   border: 0;
-  border-radius: 12px;
+
   color: ${props => !props.disabled ? props.color : `${props.color}55`};
   cursor: pointer;
   display: flex;

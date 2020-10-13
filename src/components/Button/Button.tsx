@@ -97,9 +97,9 @@ interface StyledButtonProps {
 
 const StyledButton = styled.button<StyledButtonProps>`
   align-items: center;
-  background: ${props => !props.disabled ? 'linear-gradient(180deg, #ffd879 0%, #ff7f00 76.22%)' : `#ddd`};
+  background: ${props => !props.disabled ? 'linear-gradient(180deg,#989898 0%,#313030 76.22%)' : `#ddd`};
   border: 0;
-  border-radius: 12px;
+
   color: #fff;
   cursor: pointer;
   display: flex;

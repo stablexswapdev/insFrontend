@@ -28,13 +28,13 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
 
     return (
         <Modal>
-            <ModalTitle text="Select a wallet provider." />
             <ModalContent>
                 <StyledWalletsWrapper>
                     <StyledWalletCard>
                         <WalletCard
                             icon={<img src={metamaskLogo} style={{ height: 52 }} />}
                             onConnect={() => {
+                                console.log('ddd')
                                 connect('injected')
                                 window.localStorage.setItem('accountStatus', '1')
                             }}
@@ -46,6 +46,7 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
                         <WalletCard
                             icon={<img src={trustwalletLogo} style={{ height: 52 }} />}
                             onConnect={() => {
+                                 console.log('ddd')
                                 connect('injected')
                                 window.localStorage.setItem('accountStatus', '1')
                             }}
@@ -76,9 +77,6 @@ const WalletProviderModal: React.FC<ModalProps> = ({ onDismiss }) => {
                     </StyledWalletCard>
                 </StyledWalletsWrapper>
             </ModalContent>
-            <ModalActions>
-                <Button text="Cancel" variant="secondary" onClick={onDismiss} />
-            </ModalActions>
         </Modal>
     )
 }
@@ -93,9 +91,8 @@ const StyledWalletsWrapper = styled.div`
 `
 
 const StyledWalletCard = styled.div`
-  flex-basis: calc(50% - ${(props) => props.theme.spacing[2]}px);
-  padding-bottom: 0.2em;
-  padding-top: 0.2em;
+  flex-basis: calc(100%);
+  padding: 0.1em;
 `
 
 export default WalletProviderModal

@@ -57,7 +57,7 @@ const StyledInfo = styled.div`
     height: 120px;
     padding: 20px;
     width: 600px;
-    text-align: center;
+
     padding-top: 200px;
     position: relative;
     margin-top: -200px;
@@ -77,7 +77,7 @@ const Countdown = styled.div`
   font-size: 58px;
   color: ${(props) => props.theme.colors.primary};
   letter-spacing: 0;
-  text-align: center;
+
   margin-left: 10px;
   text-shadow: 0 2px 21px rgba(10,16,128,0.08);
 `

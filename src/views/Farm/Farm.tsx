@@ -101,7 +101,7 @@ const Title= styled.div`
   color: ${(props) => props.theme.colors.secondary};
   font-size:29px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 900;
   margin: 50px;
 `
@@ -141,7 +141,7 @@ const StyledInfo = styled.h3`
   font-weight: 400;
   margin: 0;
   padding: 0;
-  text-align: center;
+
 `
 
 

@@ -64,7 +64,7 @@ const Farm: React.FC = () => {
 
 const StyledFarm = styled.div`
   margin-top: 160px;
-  text-align: center;
+
   > div{
     display:  inline-block;
     text-align: left;

@@ -2,10 +2,13 @@ import React, { useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import useModal from '../../../hooks/useModal'
+import useSushi from '../../../hooks/useSushi'
+import {getSushiAddress} from '../../../sushi/utils'
 import Button from '../../Button'
 import WalletProviderModal from '../../WalletProviderModal'
 import AccountModal from './AccountModal'
-import { useCakePrice } from '../../../hooks/useTokenBalance'
+import useTokenBalance, { useCakePrice } from '../../../hooks/useTokenBalance'
+import {getBalanceNumber} from '../../../utils/formatBalance'
 
 interface AccountButtonProps {}
 
@@ -18,11 +21,13 @@ const AccountButton: React.FC<AccountButtonProps> = (props) => {
 
   const { account, connect, status } = useWallet()
 
-  const cakePrice = useCakePrice()
 
   const handleUnlockClick = useCallback(() => {
     onPresentWalletProviderModal()
   }, [onPresentWalletProviderModal])
+
+  const sushi = useSushi()
+  const sushiBalance = useTokenBalance(getSushiAddress(sushi))
 
 
   return (
@@ -52,6 +57,7 @@ const PriceTag = styled.div`
 
 const StyledAccountButton = styled.div`
   position:  relative;
+  display: flex;
   @media (max-width: 850px) {
     display: none;
   }

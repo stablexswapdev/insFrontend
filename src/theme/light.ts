@@ -4,10 +4,11 @@ export default  {
   ...base,
   colors: {
     ...base.colors,
-    bg: '#ffebc1',
+    bg: '#fff',
     cardBg: '#FFFDFA',
-    primary: '#ff9e33',
-    secondary: '#d24700',
+    text: '#333',
+    primary: '#585757',
+    secondary: '#909090',
     inputBg: '#FFF9F0'
   },
 }

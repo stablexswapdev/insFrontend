@@ -29,7 +29,7 @@ const StyledResponsiveWrapper = styled.div`
   justify-content: flex-end;
   position: relative;
   width: 100%;
-  max-width: 512px;
+  max-width: 412px;
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}px) {
     flex: 1;
     position: absolute;
@@ -44,7 +44,7 @@ const StyledResponsiveWrapper = styled.div`
 const StyledModal = styled.div`
   padding: 0 20px;
   background: ${(props) => props.theme.colors.cardBg};
-  border-radius: 12px;
+
   display: flex;
   flex-direction: column;
   position: relative;

@@ -141,7 +141,7 @@ const StyledLink = styled(NavLink)`
   font-weight: 700;
   padding: ${(props) => props.theme.spacing[3]}px
     ${(props) => props.theme.spacing[4]}px;
-  text-align: center;
+
   text-decoration: none;
   width: 100%;
   &:hover {

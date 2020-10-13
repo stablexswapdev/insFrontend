@@ -9,7 +9,8 @@ const CardContent: React.FC = ({ children }) => (
 const StyledCardContent = styled.div`
   display: flex;
   flex: 1;
-  flex-direction: column;
+  flex-direction: row;
+  cursor: pointer;
   padding: ${(props) => props.theme.spacing[3]}px;
 
 `

@@ -99,7 +99,7 @@ const Title = styled.div`
   color: ${(props) => props.theme.colors.blue[100]};
   font-size:20px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 900;
   line-height:  2rem;
 `
@@ -137,7 +137,7 @@ const StyledInfo = styled.h3`
   font-weight: 400;
   margin: 0;
   padding: 0;
-  text-align: center;
+
 `
 
 export default Farm

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Container from '../Container'
 import Logo from '../Logo'
 import { Link } from 'react-router-dom'
+import title from '../../assets/img/title.png'
 
 import AccountButton from './components/AccountButton'
 import Nav from './components/Nav'
@@ -18,20 +19,16 @@ interface TopBarProps {
 const TopBar: React.FC<TopBarProps> = ({ isDark, toogleTheme, onPresentMobileMenu}) => {
     return (
         <StyledTopBar>
-            <Container size="lg">
+            <Container size="sm">
                 <StyledTopBarInner>
                     <StyledLogoWrapper>
                       <Link to="/">
+                        <img src={title} height="28" />
                         StableX Swap
                       </Link>
                     </StyledLogoWrapper>
-                    <StyledMoonButtonWrapper2>
-                      <ThemeSwitch isDark={isDark} toogleTheme={toogleTheme} />
-                    </StyledMoonButtonWrapper2>
+
                     <StyledAccountButtonWrapper>
-                      <StyledMoonButtonWrapper>
-                        <ThemeSwitch isDark={isDark} toogleTheme={toogleTheme} />
-                      </StyledMoonButtonWrapper>
                         <AccountButton/>
                     </StyledAccountButtonWrapper>
 
@@ -44,7 +41,6 @@ const TopBar: React.FC<TopBarProps> = ({ isDark, toogleTheme, onPresentMobileMen
 const Menu = styled.div`
   margin: 0 auto;
   width: 82px;
-  text-align: center;
   color: white;
   font-size: 17px;
   padding: 3px 3px 3px 3px;
@@ -64,9 +60,13 @@ const StyledLogoWrapper = styled.div`
   @media (max-width: 420px) {
     width: auto;
   }
+  img {
+    position: relative;
+    top: 4px;
+  }
   a {
     text-decoration: none;
-    color: #ff982b;
+    color: ${(props) => props.theme.colors.text};
     font-size: 26px;
     font-weight: 900;
   }

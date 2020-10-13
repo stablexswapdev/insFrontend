@@ -30,7 +30,7 @@ const StyledInfo = styled.div`
     height: 120px;
     padding: 20px;
     width: 600px;
-    text-align: center;
+
     padding-top: 200px;
     position: relative;
     margin-top: -200px;

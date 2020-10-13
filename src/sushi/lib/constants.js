@@ -78,11 +78,11 @@ export const supportedPools = [
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
       56: '0xf68fd424597e6c872d46241fb745167e2c380063'
     },
-    name: 'ORG STAKING',
-    symbol: 'ORG',
-    symbol: 'ORG-BNB FLIP',
+    name: 'STS STAKING',
+    symbol: 'STS',
+    symbol: 'STS-BNB FLIP',
     icon: '🍊',
-    multiplier: '10X'
+    multiplier: '5X'
   },
   {
     pid: 1,
@@ -95,10 +95,10 @@ export const supportedPools = [
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
     },
     name: 'Cake STAKING',
-    symbol: 'BUST-USDT FLIP',
-    tokenSymbol: 'USDT',
+    symbol: 'BUST-BNB FLIP',
+    tokenSymbol: 'BUST',
     icon: '🍊',
-    multiplier: '5X'
+    multiplier: '3X'
   },
   {
     pid: 2,
@@ -111,10 +111,26 @@ export const supportedPools = [
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
     },
     name: 'Cake Party!',
+    symbol: 'BUSD-USDT FLIP',
+    tokenSymbol: 'USDT',
+    icon: '🍊',
+    multiplier: '3X'
+  },
+  {
+    pid: 3,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+    },
+    name: 'Cake Party!',
     symbol: 'BUSD-DAI FLIP',
     tokenSymbol: 'DAI',
     icon: '🍊',
-    multiplier: '5X'
+    multiplier: '3X'
   },
 ]
 
@@ -122,21 +138,27 @@ export const forShowPools = [
   {
     pid: 0,
     name: 'Oranges Party!',
-    symbol: 'ORG-BNB',
-    tokenSymbol: 'ORG',
-    multiplier: '10X'
+    symbol: 'STS-BNB',
+    tokenSymbol: 'STS',
+    multiplier: '5X'
   },
   {
     pid: 1,
     name: 'BUST GAME',
-    symbol: 'BUSD-USDT',
+    symbol: 'BUSD-BNB',
     tokenSymbol: 'BUSD',
-    multiplier: '5X'
+    multiplier: '3X'
+  },
+  {
+    pid: 2,
+    symbol: 'BUSD-USDT',
+    tokenSymbol: 'ADA',
+    multiplier: '3X'
   },
   {
     pid: 2,
     symbol: 'BUSD-DAI',
     tokenSymbol: 'ADA',
-    multiplier: '5X'
+    multiplier: '3X'
   },
 ]

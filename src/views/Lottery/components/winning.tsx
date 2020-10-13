@@ -116,7 +116,7 @@ const Row = styled.div`
 `
 
 const CardImage = styled.div`
-  text-align: center;
+
 `
 
 const RowNoPadding = styled.div`
@@ -133,12 +133,12 @@ const Column = styled.div`
 `
 
 const CenteredText = styled.div`
-  text-align: center;
+
   align-items: center;
 `
 
 const CenteredTextWithPadding = styled.div`
-  text-align: center;
+
   align-items: center;
   padding-left: 2px;
   padding-right: 2px;
@@ -146,7 +146,7 @@ const CenteredTextWithPadding = styled.div`
 
 const TicketNumberBox = styled.div`
   padding: 10px;
-  border-radius: 12px;
+
   background: linear-gradient(180deg,#54DADE 0%,#24C7D6 76.22%);
   color: white;
   font-size: 40px;
@@ -158,7 +158,7 @@ const TicketNumberBox = styled.div`
 
 const RabbitBox = styled.div`
   padding: 10px;
-  border-radius: 12px;
+
   margin: 20px;
   width: 60px;
 `
@@ -192,7 +192,7 @@ const Title = styled.div`
   color: ${(props) => props.theme.colors.secondary};
   font-size:24px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 1000;
 `
 

@@ -84,10 +84,8 @@ const Balances: React.FC = () => {
       <Card>
         <CardContent>
           <StyledBalances>
-            <SLabel>Your ORG Balance</SLabel>
+            <SLabel>Your STS Balance</SLabel>
             <StyledBalance>
-              <SushiIcon />
-              <Spacer />
               <div style={{ flex: 1 }}>
                 <Value
                   value={!!account ? getBalanceNumber(sushiBalance) : 'Locked'}
@@ -100,26 +98,26 @@ const Balances: React.FC = () => {
         <Footnote>
           Pending harvest
           <FootnoteValue>
-            <PendingRewards /> ORG
+            <PendingRewards /> STS
           </FootnoteValue>
         </Footnote>
       </Card>
       <Spacer />
 
       <Card>
-        <StyledBalances>
           <CardContent>
-            <SLabel>Total ORG Supply</SLabel>
-            <StyledBalance>
-              <Value
-                value={totalSupply ? getBalanceNumber(totalSupply) - getBalanceNumber(burnedBalance) : 'Locked'}
-              />
-            </StyledBalance>
+            <StyledBalances>
+              <SLabel>Total STS Supply</SLabel>
+              <StyledBalance>
+                <Value
+                  value={totalSupply ? getBalanceNumber(totalSupply) - getBalanceNumber(burnedBalance) : 'Locked'}
+                />
+              </StyledBalance>
+            </StyledBalances>
           </CardContent>
-        </StyledBalances>
         <Footnote>
           New rewards per block
-          <FootnoteValue>20 ORG</FootnoteValue>
+          <FootnoteValue>20 STS</FootnoteValue>
         </Footnote>
       </Card>
     </StyledWrapper>
@@ -145,13 +143,13 @@ const RowCard = styled.div`
     flex-direction: column;
     line-height: 40px;
     padding: 25px;
-    text-align: center;
+
   }
 `
 
 const SLabel = styled.div`
   line-height: 40px;
-  color: ${(props) => props.theme.colors.blue[100]};
+  color: #333;
 `
 
 const SLabel2 = styled.div`
@@ -180,6 +178,7 @@ const FootnoteValue = styled.div`
 const StyledWrapper = styled.div`
   align-items: center;
   display: flex;
+  flex-flow: column nowrap;
   @media (max-width: 768px) {
     width: 100%;
     flex-flow: column nowrap;

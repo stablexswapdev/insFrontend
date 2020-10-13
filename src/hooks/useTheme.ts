@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
-import mediaObserve from '../utils/mediaObserve'
+// import mediaObserve from '../utils/mediaObserve'
 
 type ReturnType = [boolean, (isDark: boolean) => void]
 
@@ -9,13 +9,13 @@ function useTheme(): ReturnType {
     setIsDark(rs)
   }, [setIsDark])
 
-  useEffect(() => {
-    const unSubscribe = mediaObserve.subscribe(rs => {
-      toogleTheme(rs.isDark)
-    });
+  // useEffect(() => {
+  //   const unSubscribe = mediaObserve.subscribe(rs => {
+  //     toogleTheme(rs.isDark)
+  //   });
 
-    return unSubscribe;
-  }, [toogleTheme])
+  //   return unSubscribe;
+  // }, [toogleTheme])
 
   return [isDark, toogleTheme]
 }

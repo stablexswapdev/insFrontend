@@ -7,6 +7,7 @@ export default {
     bg: '#191326',
     cardBg: '#2b233f',
     primary: '#D7CBF1',
+    text: '#fff',
     secondary: '#9D6DFF',
     inputBg: '#191326'
   }

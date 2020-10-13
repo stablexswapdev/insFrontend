@@ -33,7 +33,7 @@ const StyledPageHeader = styled.div`
 const StyledIcon = styled.div`
   font-size: 180px;
   line-height: 180px;
-  text-align: center;
+
   img {
     width: 100%;
     height: 100%;
@@ -60,7 +60,7 @@ const StyledSubtitle = styled.h3`
   font-weight: 400;
   margin: 0;
   padding: 0;
-  text-align: center;
+
 `
 
 export default PageHeader

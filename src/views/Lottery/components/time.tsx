@@ -61,7 +61,7 @@ const Title = styled.div`
   color: ${(props) => props.theme.colors.secondary};
   font-size:26px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 1000;
 `
 
@@ -69,7 +69,7 @@ const Title2 = styled.div`
   color: ${(props) => props.theme.colors.primary};
   font-size:36px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 1000;
 `
 

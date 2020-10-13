@@ -41,7 +41,7 @@ const PriceTag = styled.div`
   color: #7645D9;
   font-weight: 100;
   width: 160px;
-  text-align: center;
+
   right: 0;
   margin: 20px auto;
   b {

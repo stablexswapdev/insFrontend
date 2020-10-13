@@ -99,7 +99,7 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
         apy: apy
       }
       const newFarmRows = [...farmRows]
-      if (newFarmRows[newFarmRows.length - 1].length === 3) {
+      if (newFarmRows[newFarmRows.length - 1].length === 4) {
         newFarmRows.push([farmWithStakedValue])
       } else {
         newFarmRows[newFarmRows.length - 1].push(farmWithStakedValue)
@@ -118,7 +118,7 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
             {farmRow.map((farm, j) => (
               <React.Fragment key={j}>
                 <FarmCard farm={farm} stakedValue={realStakedValue[j]}  removed={removed}/>
-                {(j === 0 || j === 1) && <StyledSpacer />}
+
               </React.Fragment>
             ))}
           </StyledRow>
@@ -133,7 +133,7 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
                 <Multiplier>{pool.multiplier}</Multiplier>
                 </CardImage>
                 <Lable><span>Deposit</span><span  className="right">{pool.symbol}</span></Lable>
-                <Lable><span>Earn</span><span  className="right">ORG</span></Lable>
+                <Lable><span>Earn</span><span  className="right">STS</span></Lable>
 
                 <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />
               </FCard>)
@@ -148,14 +148,18 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
 const FContent= styled.div`
   display: flex;
   margin-bottom: 24px;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content:space-around;
   @media (max-width: 500px) {
-    justify-content: center;
+    justify-content: left;
+  }
+  * {
+    box-sizing: border-box;
   }
 `
 
 const CardImage = styled.div`
-  text-align: center;
+
 `
 
 const Lable = styled.div`
@@ -173,18 +177,19 @@ color: ${(props) => props.theme.colors.secondary};
 
 const FCard = styled.div`
   position: relative;
-  background: ${(props) => props.theme.colors.cardBg};
   box-shadow: 0px 2px 10px rgba(171, 133, 115, 0.16);
-  border-radius: 20px;
   height: 309px;
   padding: 20px;
   justify-content: center;
   flex-direction:column;
   justify-content:space-around;
   display: flex;
-  width: 240px;
-  text-align: center;
-  margin: 6px;
+
+  margin: 6px 0;
+  width: 245px;
+  * {
+    box-sizing: border-box;
+  }
   img {
     height: 80px;
     width: 80px;
@@ -254,12 +259,12 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
           <StyledContent>
             <FCard>
             <CardImage>
-              <Multiplier>{farm.multiplier}</Multiplier>
+             <Multiplier>{farm.multiplier}</Multiplier>
 
             </CardImage>
             <StyledSpacer2 />
             <Lable><span>Deposit</span><span  className="right">{farm.lpToken.toUpperCase().replace("PANCAKE", "")}</span></Lable>
-            <Lable><span>Earn</span><span  className="right">ORG</span></Lable>
+            <Lable><span>Earn</span><span  className="right">STS</span></Lable>
             { !removed &&
             <Lable>
               <span>APY</span>
@@ -333,7 +338,6 @@ const StyledCardAccent = styled.div`
   );
   background-size: 300% 300%;
   animation: ${RainbowLight} 2s linear infinite;
-  border-radius: 12px;
   filter: blur(6px);
   position: absolute;
   top: -2px;
@@ -344,7 +348,8 @@ const StyledCardAccent = styled.div`
 `
 
 const StyledCards = styled.div`
-  width: 900px;
+  width: 500px;
+  margin: 0 auto;
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -361,6 +366,7 @@ const StyledRow = styled.div`
   display: flex;
   margin-bottom: ${(props) => props.theme.spacing[4]}px;
   flex-flow: row wrap;
+  justify-content: space-between;
   @media (max-width: 768px) {
     width: 100%;
     flex-flow: column nowrap;
@@ -370,8 +376,11 @@ const StyledRow = styled.div`
 
 const StyledCardWrapper = styled.div`
   display: flex;
-  width: calc((900px - ${(props) => props.theme.spacing[4]}px * 2) / 3);
   position: relative;
+  margin: 5px 0;
+  * {
+    box-sizing: border-box;
+  }
 `
 
 const StyledTitle = styled.h4`
@@ -387,6 +396,7 @@ const StyledContent = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
+  width: 245px;
 `
 
 const Multiplier = styled.div`
@@ -394,7 +404,6 @@ const Multiplier = styled.div`
   line-height: 25px;
   padding: 0 12px;
   background: ${(props) => props.theme.colors.blue[100]};
-  border-radius: 10px;
   color: ${(props) => props.theme.colors.bg};
   font-weight: 900;
   left: 20px;
@@ -413,7 +422,7 @@ const StyledSpacer2 = styled.div`
 
 const StyledDetails = styled.div`
   margin-top: ${(props) => props.theme.spacing[2]}px;
-  text-align: center;
+
 `
 
 const StyledDetail = styled.div`
@@ -424,7 +433,6 @@ const StyledInsight = styled.div`
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  border-radius: 8px;
   background: #fffdfa;
   color: #aa9584;
   width: 100%;
@@ -432,7 +440,7 @@ const StyledInsight = styled.div`
   line-height: 32px;
   font-size: 13px;
   border: 1px solid #e6dcd5;
-  text-align: center;
+
   padding: 0 12px;
 `
 

@@ -75,7 +75,7 @@ const Title = styled.div`
   color: ${(props) => props.theme.colors.secondary};
   font-size:56px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 1000;
 `
 
@@ -84,7 +84,7 @@ const Title2 = styled.div`
   color: ${(props) => props.theme.colors.primary};
   font-size:56px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 1000;
 `
 
@@ -92,7 +92,7 @@ const Subtitle = styled.div`
   color: ${(props) => props.theme.colors.secondary};
   font-size:20px;
   width: 50vw;
-  text-align: center;
+
   font-weight: 600;
   margin-top: 0.8em;
 `
@@ -104,7 +104,7 @@ const StyledCardWrapper = styled.div`
 `
 
 const StyledFarm = styled.div`
-  margin-top: 2.5em;      
+  margin-top: 2.5em;
   align-items: center;
   display: flex;
   flex-direction: column;

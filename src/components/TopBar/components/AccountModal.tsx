@@ -29,41 +29,39 @@ const AccountModal: React.FC<ModalProps> = ({onDismiss}) => {
 
     return (
         <Modal>
-            <ModalTitle text="My Account"/>
             <ModalContent>
                 <Spacer/>
-
                 <div style={{display: 'flex'}}>
                     <StyledBalanceWrapper>
-                        <CardIcon>
-                            <span>🍊</span>
-                        </CardIcon>
                         <StyledBalance>
                             <Value value={getBalanceNumber(sushiBalance)}/>
-                            <Label text="ORG Balance"/>
+                            <Label text="STS Balance"/>
                         </StyledBalance>
                     </StyledBalanceWrapper>
                 </div>
 
                 <Spacer/>
-                <Button
-                    href={`https://bscscan.com/address/${account}`}
-                    text="View on BscScan"
-                    variant="secondary"
-                />
-                <Spacer/>
-                <Button
-                    onClick={handleSignOutClick}
-                    text="Sign out"
-                    variant="secondary"
-                />
+                <StyledButtons>
+                  <Button
+                      href={`https://bscscan.com/address/${account}`}
+                      text="View on BscScan"
+                      variant="secondary"
+                  />
+                  <Spacer/>
+                  <Button
+                      onClick={handleSignOutClick}
+                      text="Sign out"
+                      variant="secondary"
+                  />
+                </StyledButtons>
             </ModalContent>
-            <ModalActions>
-                <Button onClick={onDismiss} text="Cancel"/>
-            </ModalActions>
         </Modal>
     )
 }
+
+const StyledButtons = styled.div`
+  display: flex;
+`
 
 const StyledBalance = styled.div`
   align-items: center;

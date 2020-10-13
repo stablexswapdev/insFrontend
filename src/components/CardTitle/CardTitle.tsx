@@ -10,11 +10,12 @@ const CardTitle: React.FC<CardTitleProps> = ({ text }) => (
 )
 
 const StyledCardTitle = styled.div`
-  color: ${(props) => props.theme.colors.primary};
-  font-size: 18px;
-  font-weight: 700;
-  padding: ${(props) => props.theme.spacing[4]}px;
-  text-align: center;
+  color: black;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 40px;
+  padding: 0 20px;
+
 `
 
 export default CardTitle
