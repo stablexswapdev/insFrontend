@@ -52,6 +52,9 @@ const PriceTag = styled.div`
 
 const StyledAccountButton = styled.div`
   position:  relative;
+  @media (max-width: 850px) {
+    display: none;
+  }
 `
 
 export default AccountButton

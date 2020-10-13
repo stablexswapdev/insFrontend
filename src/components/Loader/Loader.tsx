@@ -8,6 +8,8 @@ interface LoaderProps {
 }
 
 const Loader: React.FC<LoaderProps> = ({ text }) => {
+
+
   return (
     <StyledLoader>
       <CardIcon>
@@ -17,6 +19,27 @@ const Loader: React.FC<LoaderProps> = ({ text }) => {
     </StyledLoader>
   )
 }
+
+const StyledInfo = styled.div`
+    background: #FFFDFA;
+    box-shadow: 0px 2.2623px 11.3115px rgba(171, 133, 115, 0.16);
+    border-radius: 50px;
+    font-size: 25px;
+    color: ${(props) => props.theme.colors.blue[100]};
+    font-weight: 900;
+    height: 120px;
+    padding: 20px;
+    width: 600px;
+    text-align: center;
+    padding-top: 200px;
+    position: relative;
+    margin-top: -200px;
+    z-index: -1;
+
+  > b {
+    color: ${(props) => props.theme.colors.primary};
+  }
+`
 
 const spin = keyframes`
   0% {

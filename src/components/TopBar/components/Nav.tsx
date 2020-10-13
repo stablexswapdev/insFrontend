@@ -6,20 +6,7 @@ const Nav: React.FC = () => {
   return (
     <>
       <StyledNav>
-        <StyledLink exact activeClassName="active" to="/farms">
-          Farm
-        </StyledLink>
-        <StyledAbsoluteLink
-          href="https://exchange.pancakeswap.finance"
-          target="_blank">
-          Exchange
-        </StyledAbsoluteLink>
-        <StyledAbsoluteLink
-          href="https://voting.stablexswap.com"
-          target="_blank"
-        >
-          Voting
-        </StyledAbsoluteLink>
+
       </StyledNav>
     </>
   )

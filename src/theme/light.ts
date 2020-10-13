@@ -4,7 +4,7 @@ export default  {
   ...base,
   colors: {
     ...base.colors,
-    bg: '#F5F3F3',
+    bg: '#ffebc1',
     cardBg: '#FFFDFA',
     primary: '#ff9e33',
     secondary: '#d24700',

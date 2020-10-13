@@ -23,16 +23,18 @@ const TopBar: React.FC<TopBarProps> = ({ isDark, toogleTheme, onPresentMobileMen
                     <StyledLogoWrapper>
                       <Link to="/">
                         StableX Swap
-                        </Link>
+                      </Link>
                     </StyledLogoWrapper>
-                    <Nav />
-                    <ThemeSwitch isDark={isDark} toogleTheme={toogleTheme} />
+                    <StyledMoonButtonWrapper2>
+                      <ThemeSwitch isDark={isDark} toogleTheme={toogleTheme} />
+                    </StyledMoonButtonWrapper2>
                     <StyledAccountButtonWrapper>
+                      <StyledMoonButtonWrapper>
+                        <ThemeSwitch isDark={isDark} toogleTheme={toogleTheme} />
+                      </StyledMoonButtonWrapper>
                         <AccountButton/>
                     </StyledAccountButtonWrapper>
-                    <StyledAccountMenuWrapper>
-                        <Menu onClick={onPresentMobileMenu}>Menu</Menu>
-                    </StyledAccountMenuWrapper>
+
                 </StyledTopBarInner>
             </Container>
         </StyledTopBar>
@@ -96,7 +98,7 @@ const StyledAccountButtonWrapper = styled.div`
   align-items: center;
   display: flex;
   justify-content: flex-end;
-  width: 156px;
+  width: 196px;
   @media (max-width: 400px) {
     justify-content: center;
     width: auto;
@@ -129,6 +131,17 @@ const StyledMenuButton = styled.button`
     height: 44px;
     justify-content: center;
     width: 44px;
+  }
+`
+
+const StyledMoonButtonWrapper = styled.div`
+  padding: 0 20px;
+`
+
+const StyledMoonButtonWrapper2 =  styled.div`
+  display: none;
+  @media (max-width: 850px) {
+    display: block;
   }
 `
 
