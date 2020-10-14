@@ -133,7 +133,7 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
                 <Multiplier>{pool.multiplier}</Multiplier>
                 </CardImage>
                 <Lable><span>Deposit</span><span  className="right">{pool.symbol}</span></Lable>
-                <Lable><span>Earn</span><span  className="right">STS</span></Lable>
+                <Lable><span>Earn</span><span  className="right">STAX</span></Lable>
 
                 <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />
               </FCard>)
@@ -264,7 +264,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
             </CardImage>
             <StyledSpacer2 />
             <Lable><span>Deposit</span><span  className="right">{farm.lpToken.toUpperCase().replace("PANCAKE", "")}</span></Lable>
-            <Lable><span>Earn</span><span  className="right">STS</span></Lable>
+            <Lable><span>Earn</span><span  className="right">STAX</span></Lable>
             { !removed &&
             <Lable>
               <span>APY</span>

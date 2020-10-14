@@ -84,7 +84,7 @@ const Balances: React.FC = () => {
       <Card>
         <CardContent>
           <StyledBalances>
-            <SLabel>Your STS Balance</SLabel>
+            <SLabel>Your STAX Balance</SLabel>
             <StyledBalance>
               <div style={{ flex: 1 }}>
                 <Value
@@ -98,7 +98,7 @@ const Balances: React.FC = () => {
         <Footnote>
           Pending harvest
           <FootnoteValue>
-            <PendingRewards /> STS
+            <PendingRewards /> STAX
           </FootnoteValue>
         </Footnote>
       </Card>
@@ -107,7 +107,7 @@ const Balances: React.FC = () => {
       <Card>
           <CardContent>
             <StyledBalances>
-              <SLabel>Total STS Supply</SLabel>
+              <SLabel>Total STAX Supply</SLabel>
               <StyledBalance>
                 <Value
                   value={totalSupply ? getBalanceNumber(totalSupply) - getBalanceNumber(burnedBalance) : 'Locked'}
@@ -117,7 +117,7 @@ const Balances: React.FC = () => {
           </CardContent>
         <Footnote>
           New rewards per block
-          <FootnoteValue>20 STS</FootnoteValue>
+          <FootnoteValue>20 STAX</FootnoteValue>
         </Footnote>
       </Card>
     </StyledWrapper>

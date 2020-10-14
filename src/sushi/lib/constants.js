@@ -78,9 +78,9 @@ export const supportedPools = [
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
       56: '0xf68fd424597e6c872d46241fb745167e2c380063'
     },
-    name: 'STS STAKING',
-    symbol: 'STS',
-    symbol: 'STS-BNB FLIP',
+    name: 'STAX STAKING',
+    symbol: 'STAX',
+    symbol: 'STAX-BNB FLIP',
     icon: '🍊',
     multiplier: '5X'
   },
@@ -95,7 +95,7 @@ export const supportedPools = [
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
     },
     name: 'Cake STAKING',
-    symbol: 'BUST-BNB FLIP',
+    symbol: 'BUST-USDT FLIP',
     tokenSymbol: 'BUST',
     icon: '🍊',
     multiplier: '3X'
@@ -111,8 +111,8 @@ export const supportedPools = [
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
     },
     name: 'Cake Party!',
-    symbol: 'BUSD-USDT FLIP',
-    tokenSymbol: 'USDT',
+    symbol: 'BUSD-DAI FLIP',
+    tokenSymbol: 'DAI',
     icon: '🍊',
     multiplier: '3X'
   },
@@ -127,7 +127,7 @@ export const supportedPools = [
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
     },
     name: 'Cake Party!',
-    symbol: 'BUSD-DAI FLIP',
+    symbol: 'USDT-DAI FLIP',
     tokenSymbol: 'DAI',
     icon: '🍊',
     multiplier: '3X'
@@ -138,19 +138,12 @@ export const forShowPools = [
   {
     pid: 0,
     name: 'Oranges Party!',
-    symbol: 'STS-BNB',
-    tokenSymbol: 'STS',
+    symbol: 'STAX-BNB',
+    tokenSymbol: 'STAX',
     multiplier: '5X'
   },
   {
     pid: 1,
-    name: 'BUST GAME',
-    symbol: 'BUSD-BNB',
-    tokenSymbol: 'BUSD',
-    multiplier: '3X'
-  },
-  {
-    pid: 2,
     symbol: 'BUSD-USDT',
     tokenSymbol: 'ADA',
     multiplier: '3X'
@@ -159,6 +152,12 @@ export const forShowPools = [
     pid: 2,
     symbol: 'BUSD-DAI',
     tokenSymbol: 'ADA',
+    multiplier: '3X'
+  },
+  {
+    pid: 3,
+    symbol: 'USDT-DAI',
+    tokenSymbol: 'DAI',
     multiplier: '3X'
   },
 ]

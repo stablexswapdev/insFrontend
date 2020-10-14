@@ -31,7 +31,7 @@ const Home: React.FC = () => {
 
   return (
     <Page>
-      <Title>STS will start farming in</Title>
+      <Title>STAX will start farming in</Title>
       <StyledInfo>
         <Countdown>{parseInt(days ? days : '0')}</Countdown>D
         <Countdown>{parseInt(hours)}</Countdown>H
