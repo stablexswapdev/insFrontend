@@ -12,7 +12,10 @@ import SushiIcon from '../../../components/SushiIcon'
 import useAllEarnings from '../../../hooks/useAllEarnings'
 import useAllStakedValue from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
-import useTokenBalance, { useTotalSupply, useBurnedBalance } from '../../../hooks/useTokenBalance'
+import useTokenBalance, {
+  useTotalSupply,
+  useBurnedBalance,
+} from '../../../hooks/useTokenBalance'
 import useSushi from '../../../hooks/useSushi'
 
 import Separator from '../../../components/Separator'
@@ -80,55 +83,61 @@ const Balances: React.FC = () => {
 
   return (
     <>
-    <StyledWrapper>
-      <Card>
-        <CardContent>
-          <StyledBalances>
-            <SLabel>Your STAX Balance</SLabel>
-            <StyledBalance>
-              <div style={{ flex: 1 }}>
-                <Value
-                  value={!!account ? getBalanceNumber(sushiBalance) : 'Locked'}
-                />
-              </div>
-            </StyledBalance>
-          </StyledBalances>
-        </CardContent>
+      <StyledWrapper>
+        <Card>
+          <CardContent>
+            <StyledBalances>
+              <SLabel>Your STAX Balance</SLabel>
+              <StyledBalance>
+                <div style={{ flex: 1 }}>
+                  <Value
+                    value={
+                      !!account ? getBalanceNumber(sushiBalance) : 'Locked'
+                    }
+                  />
+                </div>
+              </StyledBalance>
+            </StyledBalances>
+          </CardContent>
 
-        <Footnote>
-          Pending harvest
-          <FootnoteValue>
-            <PendingRewards /> STAX
-          </FootnoteValue>
-        </Footnote>
-      </Card>
-      <Spacer />
+          <Footnote>
+            Pending harvest
+            <FootnoteValue>
+              <PendingRewards /> STAX
+            </FootnoteValue>
+          </Footnote>
+        </Card>
+        <Spacer />
 
-      <Card>
+        <Card>
           <CardContent>
             <StyledBalances>
               <SLabel>Total STAX Supply</SLabel>
               <StyledBalance>
                 <Value
-                  value={totalSupply ? getBalanceNumber(totalSupply) - getBalanceNumber(burnedBalance) : 'Locked'}
+                  value={
+                    totalSupply
+                      ? getBalanceNumber(totalSupply) -
+                        getBalanceNumber(burnedBalance)
+                      : 'Locked'
+                  }
                 />
               </StyledBalance>
             </StyledBalances>
           </CardContent>
-        <Footnote>
-          New rewards per block
-          <FootnoteValue>20 STAX</FootnoteValue>
-        </Footnote>
-      </Card>
-    </StyledWrapper>
-
+          <Footnote>
+            New rewards per block
+            <FootnoteValue>20 STAX</FootnoteValue>
+          </Footnote>
+        </Card>
+      </StyledWrapper>
     </>
   )
 }
 
 const RowCard = styled.div`
   width: 100%;
-  box-shadow: 0px 2px 8px rgba(171,133,115,0.21);
+  box-shadow: 0px 2px 8px rgba(171, 133, 115, 0.21);
   border-radius: 20px;
   background: #fff;
   line-height: 60px;
@@ -137,13 +146,12 @@ const RowCard = styled.div`
   background: ${(props) => props.theme.colors.cardBg};
 
   margin-top: 20px;
-  display:flex;
+  display: flex;
   justify-content: space-between;
   @media (max-width: 500px) {
     flex-direction: column;
     line-height: 40px;
     padding: 25px;
-
   }
 `
 
@@ -153,7 +161,7 @@ const SLabel = styled.div`
 `
 
 const SLabel2 = styled.div`
-  color: #7645D9;
+  color: #7645d9;
   @media (max-width: 500px) {
     line-height: 20px;
   }
@@ -179,6 +187,8 @@ const StyledWrapper = styled.div`
   align-items: center;
   display: flex;
   flex-flow: column nowrap;
+  width: 500px;
+  margin: 0 auto;
   @media (max-width: 768px) {
     width: 100%;
     flex-flow: column nowrap;
@@ -200,8 +210,7 @@ const StyledBalance = styled.div`
   line-height: 60px;
 `
 
-
-const StyledSpan  = styled.span`
+const StyledSpan = styled.span`
   color: #ffc35c;
 `
 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const Card: React.FC = ({ children }) => <StyledCard>{children}</StyledCard>
 
 const StyledCard = styled.div`
-  background:#fff;
+  background: #fff;
   border: 2px solid #333;
   display: flex;
   color: #333;
@@ -13,7 +13,8 @@ const StyledCard = styled.div`
   box-shadow: 0px 2px 8px rgba(171, 133, 115, 0.21);
   border-radius: 0;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
 `
 
 export default Card
