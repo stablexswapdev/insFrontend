@@ -22,16 +22,15 @@ export const INTEGERS = {
   INTEREST_RATE_BASE: new BigNumber('1e18'),
 }
 
-
 export const contractAddresses = {
   sushi: {
     97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-    56:  '0x314062BE53367bE0cc2a4A3141F4021618B7C2bA'
+    56: '0x314062BE53367bE0cc2a4A3141F4021618B7C2bA',
     // 56: '0xbbB2aaEB8c9dA72bb7faDB42A9c84AACF26974Fd'
   },
   syrup: {
     97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
-    56:  '0x009cF7bC57584b7998236eff51b98A168DceA9B0'
+    56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
   },
   masterChef: {
     97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
@@ -44,20 +43,19 @@ export const contractAddresses = {
   },
   weth: {
     97: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
-    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
+    56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
   },
   lottery: {
     97: '0xCd1D9c9bD049C882A05353b7C646F423e1603Ce1',
-    56:  '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+    56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
   },
   lotteryNFT: {
     97: '0x329Ca0d33261d6F3144Ae7540e44b5044dDeb1bd',
-    56:  '0x009cF7bC57584b7998236eff51b98A168DceA9B0'
-  }
+    56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
+  },
 }
 
-export const sousChefTeam = [
-]
+export const sousChefTeam = []
 
 // BUSD-BNB LP
 // 0x1b96b92314c44b159149f7e0303511fb2fc4774f
@@ -72,65 +70,65 @@ export const supportedPools = [
     pid: 0,
     lpAddresses: {
       97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0xf68fd424597e6c872d46241fb745167e2c380063'
+      56: '0xf68fd424597e6c872d46241fb745167e2c380063',
     },
     name: 'STAX STAKING',
     symbol: 'STAX',
     symbol: 'STAX-BNB FLIP',
     icon: '🍊',
-    multiplier: '5X'
+    multiplier: '5X',
   },
   {
     pid: 1,
     lpAddresses: {
       97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
-      56: '0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd'
+      56: '0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd',
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     name: 'Cake STAKING',
-    symbol: 'BUST-USDT FLIP',
+    symbol: 'BUSD-USDT FLIP',
     tokenSymbol: 'BUST',
     icon: '🍊',
-    multiplier: '3X'
+    multiplier: '3X',
   },
   {
     pid: 2,
     lpAddresses: {
       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     name: 'Cake Party!',
     symbol: 'BUSD-DAI FLIP',
     tokenSymbol: 'DAI',
     icon: '🍊',
-    multiplier: '3X'
+    multiplier: '3X',
   },
   {
     pid: 3,
     lpAddresses: {
       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     },
     name: 'Cake Party!',
     symbol: 'USDT-DAI FLIP',
     tokenSymbol: 'DAI',
     icon: '🍊',
-    multiplier: '3X'
+    multiplier: '3X',
   },
 ]
 
@@ -140,24 +138,24 @@ export const forShowPools = [
     name: 'Oranges Party!',
     symbol: 'STAX-BNB',
     tokenSymbol: 'STAX',
-    multiplier: '5X'
+    multiplier: '5X',
   },
   {
     pid: 1,
     symbol: 'BUSD-USDT',
     tokenSymbol: 'ADA',
-    multiplier: '3X'
+    multiplier: '3X',
   },
   {
     pid: 2,
     symbol: 'BUSD-DAI',
     tokenSymbol: 'ADA',
-    multiplier: '3X'
+    multiplier: '3X',
   },
   {
     pid: 3,
     symbol: 'USDT-DAI',
     tokenSymbol: 'DAI',
-    multiplier: '3X'
+    multiplier: '3X',
   },
 ]
