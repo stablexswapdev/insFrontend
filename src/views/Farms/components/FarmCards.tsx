@@ -40,7 +40,7 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
   const stakedValue = useAllStakedValue()
 
   const sushiIndex = farms.findIndex(
-    ({ tokenSymbol }) => tokenSymbol === 'CAKE',
+    ({ tokenSymbol }) => tokenSymbol === 'STAX',
   )
 
   const sushiPrice =
@@ -48,10 +48,8 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
       ? stakedValue[sushiIndex].tokenPriceInWeth
       : new BigNumber(0)
 
-  // console.log(sushiPrice, stakedValue)
-
   const BLOCKS_PER_YEAR = new BigNumber(10512000)
-  const SUSHI_PER_BLOCK = new BigNumber(40)
+  const SUSHI_PER_BLOCK = new BigNumber(20)
 
 
   const [onPresentAccountModal] = useModal(<AccountModal />)
@@ -66,32 +64,31 @@ const FarmCards: React.FC<FarmCardsProps> = ({removed}) => {
 
   const realFarms =!removed ? farms.filter(farm =>farm.multiplier != '0X')
                     : farms.filter(farm => farm.multiplier == '0X')
-  const realStakedValue = stakedValue.slice(1)
+  const realStakedValue = stakedValue.slice(0)
   const bnbPrice = useBnbPrice()
-  // console.log(bnbPrice)
 
   const rows = realFarms.reduce<FarmWithStakedValue[][]>(
     (farmRows, farm, i) => {
       let apy
-      if(farm.pid==8) {
-        console.log(realStakedValue[i].poolWeight)
+
+      if(farm.pid !== 0) {
+         apy = realStakedValue[i] ? sushiPrice
+               .times(SUSHI_PER_BLOCK)
+               .times(BLOCKS_PER_YEAR)
+               .times(realStakedValue[i].poolWeight)
+               .div(realStakedValue[i].tokenAmount)
+               .div(2)
+               .times(bnbPrice) : null
       }
-      if(farm.pid == 11) {
-        apy = realStakedValue[i] ? sushiPrice
-              .times(SUSHI_PER_BLOCK)
-              .times(BLOCKS_PER_YEAR)
-              .times(realStakedValue[i].poolWeight)
-              .div(realStakedValue[i].tokenAmount)
-              .div(2)
-              .times(bnbPrice) : null
-      }
-      else {
+      else if(farm.pid == 0) {
         apy = realStakedValue[i]  && !removed ? sushiPrice
               .times(SUSHI_PER_BLOCK)
               .times(BLOCKS_PER_YEAR)
               .times(realStakedValue[i].poolWeight)
               .div(realStakedValue[i].totalWethValue) : null
-
+      }
+      else {
+        apy = null
       }
       const farmWithStakedValue = {
         ...farm,
@@ -209,8 +206,12 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
   const totalValue1 = useTokenBalance2('0x55d398326f99059ff775485246999027b3197955', farm.lpTokenAddress) *2
   let totalValue = useTokenBalance2('0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', farm.lpTokenAddress) * useBnbPrice() *2
 
-  if(farm.pid == 11) {
-    totalValue = totalValue1
+
+  if(farm.pid == 1) {
+    console.log(farm.tokenAmount?.valueOf())
+  }
+  if(farm.pid !== 0) {
+    totalValue = farm.tokenAmount?.times(2)
   }
 
   const [startTime, setStartTime] = useState(1600783200)
@@ -254,7 +255,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
 
   return (
     <StyledCardWrapper>
-      {farm.tokenSymbol === 'CAKE' && <StyledCardAccent />}
+      {farm.tokenSymbol === 'STAX' && <StyledCardAccent />}
 
           <StyledContent>
             <FCard>
@@ -263,7 +264,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
 
             </CardImage>
             <StyledSpacer2 />
-            <Lable><span>Deposit</span><span  className="right">{farm.lpToken.toUpperCase().replace("PANCAKE", "")}</span></Lable>
+            <Lable><span>Deposit</span><span  className="right">{farm.lpToken.toUpperCase().replace("PANSTAX", "")}</span></Lable>
             <Lable><span>Earn</span><span  className="right">STAX</span></Lable>
             { !removed &&
             <Lable>
@@ -280,11 +281,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
             </Lable>
             }
 
-            <Lable><span>Total Liquidity</span><span  className="right">{parseInt(totalValue).toLocaleString()}</span></Lable>
+             <Lable><span>Liquidity</span><span  className="right">${parseInt(totalValue).toLocaleString()}</span></Lable>
             <StyledSpacer2 />
+
             <Button
-              disabled={true}
-              text={'comming'}
+              disabled={!poolActive}
+              text={poolActive ? 'Select' : undefined}
+              to={`/farms/${farm.id}`}
             >
               {!poolActive && (
                 <Countdown
@@ -293,6 +296,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
                 />
               )}
             </Button>
+
 
             <Link href={`https://bscscan.com/address/${farm.lpTokenAddress}`} target="_blank">View on BscScan &gt;</Link>
             </FCard>
@@ -322,20 +326,6 @@ const RainbowLight = keyframes`
 `
 
 const StyledCardAccent = styled.div`
-  background: linear-gradient(
-    45deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 154, 0, 1) 10%,
-    rgba(208, 222, 33, 1) 20%,
-    rgba(79, 220, 74, 1) 30%,
-    rgba(63, 218, 216, 1) 40%,
-    rgba(47, 201, 226, 1) 50%,
-    rgba(28, 127, 238, 1) 60%,
-    rgba(95, 21, 242, 1) 70%,
-    rgba(186, 12, 248, 1) 80%,
-    rgba(251, 7, 217, 1) 90%,
-    rgba(255, 0, 0, 1) 100%
-  );
   background-size: 300% 300%;
   animation: ${RainbowLight} 2s linear infinite;
   filter: blur(6px);

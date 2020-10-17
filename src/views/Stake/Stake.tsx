@@ -28,7 +28,7 @@ import Stake from './components/Stake'
 const Farm: React.FC = () => {
   const { account } = useWallet()
 
-  const farmInfo = useFarm('CAKE') || {
+  const farmInfo = useFarm('STAX') || {
     pid: 0,
     lpToken: '',
     lpTokenAddress: '',
@@ -76,9 +76,9 @@ const Farm: React.FC = () => {
           <PageHeader
             icon={<img src={chef} height="90" />}
             title="Stake Cake, get SYRUP."
-            subtitle="SYRUP holders proportionally split 25% of CAKE block emissions each day (10 CAKE per block), Rewards are distributed each block. SYRUP will also be used to for the PancakeSwap Lottery and general governance. "
+            subtitle="SYRUP holders proportionally split 25% of STAX block emissions each day (10 STAX per block), Rewards are distributed each block. SYRUP will also be used to for the PancakeSwap Lottery and general governance. "
           />
-          <Title>1 CAKE = 1 SYRUP</Title>
+          <Title>1 STAX = 1 SYRUP</Title>
           <Title>You can swap back anytime</Title>
           <Spacer size="lg" />
           <StyledFarm>
@@ -101,8 +101,8 @@ const Farm: React.FC = () => {
             </StyledCardsWrapper>
             <Spacer size="lg" />
             <StyledInfo>
-              ⭐️ Every time you stake and unstake CAKE tokens, the contract will
-              automagically harvest CAKE rewards for you!
+              ⭐️ Every time you stake and unstake STAX tokens, the contract will
+              automagically harvest STAX rewards for you!
             </StyledInfo>
             <Spacer size="lg" />
           </StyledFarm>

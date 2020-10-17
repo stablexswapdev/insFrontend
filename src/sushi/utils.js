@@ -110,7 +110,7 @@ export const getPoolWeight = async (masterChefContract, pid) => {
 }
 
 export const getEarned = async (masterChefContract, pid, account) => {
-  return masterChefContract.methods.pendingCake(pid, account).call()
+  return masterChefContract.methods.pendingStax(pid, account).call()
 }
 
 export const getSousEarned = async (sousChefContract, account) => {
@@ -184,7 +184,7 @@ export const getSushiSupply = async (sushi) => {
 }
 
 export const stake = async (masterChefContract, pid, amount, account) => {
-  if(pid ===0) {
+  if(pid === 10000) {
     return masterChefContract.methods
       .enterStaking(
         new BigNumber(amount).times(new BigNumber(10).pow(18)).toString(),
@@ -220,7 +220,7 @@ export const sousStake = async (sousChefContract, amount, account) => {
 
 
 export const unstake = async (masterChefContract, pid, amount, account) => {
-  if(pid ===0) {
+  if(pid === 10000) {
     return masterChefContract.methods
       .leaveStaking(
         new BigNumber(amount).times(new BigNumber(10).pow(18)).toString(),
@@ -256,7 +256,7 @@ export const sousUnstake = async (sousChefContract, amount, account) => {
 }
 
 export const harvest = async (masterChefContract, pid, account) => {
-  if(pid ===0) {
+  if(pid ===10000) {
     return masterChefContract.methods
       .leaveStaking('0')
       .send({ from: account })

@@ -26,12 +26,12 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
           <StyledCardHeader>
             <CardIcon>🍊</CardIcon>
             <Value value={getBalanceNumber(earnings)} />
-            <Label text="CAKE Earned" />
+            <Label text="STAX Earned" />
           </StyledCardHeader>
           <StyledCardActions>
             <Button
               disabled={!earnings.toNumber() || pendingTx}
-              text={pendingTx ? 'Collecting CAKE' : 'Harvest'}
+              text={pendingTx ? 'Collecting STAX' : 'Harvest'}
               onClick={async () => {
                 setPendingTx(true)
                 await onReward()

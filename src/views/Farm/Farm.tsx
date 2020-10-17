@@ -65,7 +65,7 @@ const Farm: React.FC = () => {
 
   return (
     <>
-      <Title>Stake FLIP tokens to stack CAKE</Title>
+      <Title>Stake FLIP tokens to stack STAX</Title>
       <StyledFarm>
         <StyledCardsWrapper>
           <StyledCardWrapper>
@@ -80,11 +80,6 @@ const Farm: React.FC = () => {
             />
           </StyledCardWrapper>
         </StyledCardsWrapper>
-        <Spacer size="lg" />
-        <StyledInfo>
-          ⭐️ Every time you stake and unstake FLIP tokens, the contract will
-          automagically harvest CAKE rewards for you!
-        </StyledInfo>
         <Spacer size="lg" />
       </StyledFarm>
     </>
@@ -101,7 +96,7 @@ const Title= styled.div`
   color: ${(props) => props.theme.colors.secondary};
   font-size:29px;
   width: 50vw;
-
+  text-align: center;
   font-weight: 900;
   margin: 50px;
 `

@@ -42,8 +42,8 @@ const Farm: React.FC = () => {
   return (
     <StyledFarm>
     Estimated total value: ${busdBalance/bnbBalance6 * totalBnb *2}<br/><br/>
-    CAKE/BNB Pair<br/>
-    CAKE:{cakeBalance}<br/>
+    STAX/BNB Pair<br/>
+    STAX:{cakeBalance}<br/>
     BNB: {bnbBalance8}<br/>
     <a href={`https://bscscan.com/address/0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6`} target="_blank">link</a>
     <br/><br/>

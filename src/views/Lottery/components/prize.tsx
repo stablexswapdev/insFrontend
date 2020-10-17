@@ -60,7 +60,7 @@ const Prize: React.FC = () => {
                         <StyledCardHeader>
                             <CardIcon>🎁</CardIcon>
                             <Value value={0}/>
-                            <Label text={`CAKE prizes to be claimed!`}/>
+                            <Label text={`STAX prizes to be claimed!`}/>
                         </StyledCardHeader>
                         <StyledCardActions>
                             {!account && <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet"/>}

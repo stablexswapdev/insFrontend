@@ -35,7 +35,7 @@ const Coming: React.FC = () => {
     <Page>
       <PageHeader
         icon={'🍊'}
-        title="CAKE will start flipping in"
+        title="STAX will start flipping in"
       />
       <StyledInfo>
         <Countdown>{parseInt(days ? days : '0')}</Countdown>D
@@ -71,7 +71,7 @@ const StyledInfo = styled.div`
 const Countdown = styled.div`
   display: inline-block;
   width: 80px;
-  background: linear-gradient(180deg, #54DADE 0%, #24C7D6 76.22%);
+  background: linear-gradient(180deg, #54DADE 0%, #696f6f 76.22%);
   border-radius: 12.8px;
   font-family: monospace;
   font-size: 58px;

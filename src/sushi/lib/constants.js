@@ -26,7 +26,7 @@ export const INTEGERS = {
 export const contractAddresses = {
   sushi: {
     97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-    56:  '0x314062BE53367bE0cc2a4A3141F4021618B7C2bA'
+    56:  '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     // 56: '0xbbB2aaEB8c9dA72bb7faDB42A9c84AACF26974Fd'
   },
   syrup: {
@@ -35,7 +35,7 @@ export const contractAddresses = {
   },
   masterChef: {
     97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
-    56: '0x1051b6886d699d2d9Ee480451eFE226f3A033CB4', //  real cake
+    56: '0xC80991F9106e26e43Bf1C07C764829a85f294C71', //  real cake
     // 56: '0x39447351Fe7939C064CDD9A258F22FC76233E28e'
   },
   sousChef: {
@@ -72,16 +72,15 @@ export const supportedPools = [
     pid: 0,
     lpAddresses: {
       97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0xf68fd424597e6c872d46241fb745167e2c380063'
+      56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     },
     name: 'STAX STAKING',
-    symbol: 'STAX',
+    tokenSymbol: 'STAX',
     symbol: 'STAX-BNB FLIP',
-    icon: '🍊',
     multiplier: '5X'
   },
   {
@@ -92,44 +91,41 @@ export const supportedPools = [
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
     },
     name: 'Cake STAKING',
-    symbol: 'BUST-USDT FLIP',
-    tokenSymbol: 'BUST',
-    icon: '🍊',
+    symbol: 'BUSD-USDT FLIP',
+    tokenSymbol: 'BUSD',
     multiplier: '3X'
   },
   {
     pid: 2,
     lpAddresses: {
       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x3aB77e40340AB084c3e23Be8e5A6f7afed9D41DC'
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
     },
     name: 'Cake Party!',
     symbol: 'BUSD-DAI FLIP',
     tokenSymbol: 'DAI',
-    icon: '🍊',
     multiplier: '3X'
   },
   {
     pid: 3,
     lpAddresses: {
       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0xb3c4217AB2b265bF8c69718D280E3708b5E50577'
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82'
+      56: '0x55d398326f99059ff775485246999027b3197955'
     },
     name: 'Cake Party!',
     symbol: 'USDT-DAI FLIP',
-    tokenSymbol: 'DAI',
-    icon: '🍊',
+    tokenSymbol: 'USDT',
     multiplier: '3X'
   },
 ]
