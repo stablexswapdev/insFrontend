@@ -15,6 +15,7 @@ import useFarms from '../../../hooks/useFarms'
 import useTokenBalance, {
   useTotalSupply,
   useBurnedBalance,
+  useCakePrice
 } from '../../../hooks/useTokenBalance'
 import useSushi from '../../../hooks/useSushi'
 
@@ -80,6 +81,7 @@ const Balances: React.FC = () => {
   const sushiBalance = useTokenBalance(getSushiAddress(sushi))
   const burnedBalance = useBurnedBalance(getSushiAddress(sushi))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
+  const cakePrice = useCakePrice()
 
   return (
     <>
@@ -130,6 +132,34 @@ const Balances: React.FC = () => {
             <FootnoteValue>20 STAX</FootnoteValue>
           </Footnote>
         </Card>
+        <Spacer />
+
+        <Card>
+          <CardContent>
+            <StyledBalances>
+              <SLabel>Market Cap</SLabel>
+              <StyledBalance>
+                <div style={{ flex: 1 }}>
+                  <Value
+                    value={
+                      totalSupply
+                        ? `$${((getBalanceNumber(totalSupply) -
+                          getBalanceNumber(burnedBalance)) * cakePrice).toLocaleString()}`
+                        : 'Locked'
+                    }
+                  />
+                </div>
+              </StyledBalance>
+            </StyledBalances>
+          </CardContent>
+
+          <Footnote>
+            Price
+            <FootnoteValue>
+              ${cakePrice.toFixed(3)}
+            </FootnoteValue>
+          </Footnote>
+        </Card>
       </StyledWrapper>
     </>
   )
@@ -156,7 +186,7 @@ const RowCard = styled.div`
 `
 
 const SLabel = styled.div`
-  line-height: 40px;
+  line-height: 30px;
   color: #333;
 `
 

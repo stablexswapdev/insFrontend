@@ -33,17 +33,14 @@ const Home: React.FC = () => {
 
   return (
     <Page>
-{/*      <Title>STAX will start farming in</Title>
-      <StyledInfo>
-        <Countdown>{parseInt(days ? days : '0')}</Countdown>D
-        <Countdown>{parseInt(hours)}</Countdown>H
-        <Countdown>{parseInt(minutes)}</Countdown>M
-        <Countdown>{seconds}</Countdown>S
-      </StyledInfo>*/}
       <Spacer />
       <Container>
         <Balances />
-        <Spacer />
+        <Spacer />      <StyledInfo>
+<a target="_blank" href="https://exchange.pancakeswap.finance/#/add/ETH/0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4">➡️ Add Pool </a>
+<br/>
+<a target="_blank" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4">➡️ Buy STAX </a>
+      </StyledInfo>
         <FarmCards removed={false} />
       </Container>
       <Spacer size="lg" />
@@ -87,7 +84,10 @@ const StyledInfo = styled.h3`
   font-weight: 400;
   margin: 0;
   padding: 0;
-
+  text-align: center;
+  a {
+    color: #333;
+  }
   > b {
     color: ${(props) => props.theme.colors.primary};
   }

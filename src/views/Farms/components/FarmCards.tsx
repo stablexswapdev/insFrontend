@@ -206,10 +206,6 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
   const totalValue1 = useTokenBalance2('0x55d398326f99059ff775485246999027b3197955', farm.lpTokenAddress) *2
   let totalValue = useTokenBalance2('0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', farm.lpTokenAddress) * useBnbPrice() *2
 
-
-  if(farm.pid == 1) {
-    console.log(farm.tokenAmount?.valueOf())
-  }
   if(farm.pid !== 0) {
     totalValue = farm.tokenAmount?.times(2)
   }

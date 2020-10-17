@@ -11,7 +11,7 @@ const StyledCardContent = styled.div`
   flex: 1;
   flex-direction: row;
   cursor: pointer;
-  padding: ${(props) => props.theme.spacing[3]}px;
+  padding: ${(props) => props.theme.spacing[2]}px;
 
 `
 

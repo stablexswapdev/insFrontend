@@ -133,8 +133,10 @@ export const useCakePrice = () => {
       const bnb0 = await getBalance(ethereum, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', '0x1B96B92314C44b159149f7E0303511fB2Fc4774f')
       const bnbPrice = getBalanceNumber(new BigNumber(busd))/getBalanceNumber(new BigNumber(bnb0))
 
-      const cake = await getBalance(ethereum, '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82', '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6')
-      const bnb1 = await getBalance(ethereum, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', '0xA527a61703D82139F8a06Bc30097cC9CAA2df5A6')
+      console.log(bnbPrice)
+
+      const cake = await getBalance(ethereum, '0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4', '0x7FB0017195470bc6978659396eC9D750A35C51fE')
+      const bnb1 = await getBalance(ethereum, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', '0x7FB0017195470bc6978659396eC9D750A35C51fE')
       const cakebnb = getBalanceNumber(new BigNumber(bnb1))/getBalanceNumber(new BigNumber(cake))
 
       const cakePrice = cakebnb * bnbPrice
@@ -149,7 +151,7 @@ export const useCakePrice = () => {
       }
     }, [account, ethereum, setPrice, block])
 
-    return 0
+    return price
 }
 
 
