@@ -6,11 +6,18 @@ const Nav: React.FC = () => {
   return (
     <>
       <StyledNav>
-
+        <StyledLink exact activeClassName="active" to="/">
+         Home
+        </StyledLink>
+        <StyledLink exact activeClassName="active" to="/staking">
+          Staking
+        </StyledLink>
       </StyledNav>
     </>
   )
 }
+
+
 
 
 const StyledNav = styled.nav`
@@ -28,7 +35,7 @@ const StyledLink = styled(NavLink)`
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: #452A7A;
+    color: #333;
   }
   &.active {
     color: ${(props) => props.theme.colors.grey[600]};

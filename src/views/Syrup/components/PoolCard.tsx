@@ -14,7 +14,7 @@ import Value from '../../../components/Value'
 
 import { useSousAllowance } from '../../../hooks/useAllowance'
 import { useSousApprove } from '../../../hooks/useApprove'
-import {useSousEarnings, useSousLeftBlocks} from '../../../hooks/useEarnings'
+import {useSousEarnings, useSousLeftBlocks, useSousLeftBlocksStatus} from '../../../hooks/useEarnings'
 import useModal from '../../../hooks/useModal'
 import useStake, {useSousStake} from '../../../hooks/useStake'
 import {useSousStakedBalance, useSousTotalStaked} from '../../../hooks/useStakedBalance'
@@ -37,15 +37,20 @@ interface HarvestProps {
   tokenName: string
   sousId: number
   projectLink: string
-  harvest:  boolean
+  multi:  string
 }
 
-const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLink, harvest }) => {
+const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLink, multi }) => {
   const [requestedApproval, setRequestedApproval] = useState(false)
+  const [requestedUnstake, setRequestedUnstake] = useState(false)
   const { account } = useWallet()
   const allowance = useSousAllowance(syrup, sousId)
+  console.log(syrup)
   const { onApprove } = useSousApprove(syrup, sousId)
   const leftBlockText = useSousLeftBlocks(sousId)
+  const stakingStatus = useSousLeftBlocksStatus(sousId)
+
+  console.log(stakingStatus)
   const tokenBalance = useTokenBalance(syrup.options.address)
   const stakedBalance = useSousStakedBalance(sousId)
   const totalStaked = useSousTotalStaked(sousId)
@@ -61,7 +66,7 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
     <DepositModal
       max={tokenBalance}
       onConfirm={onStake}
-      tokenName={'SYRUP'}
+      tokenName={'STAX'}
     />,
   )
 
@@ -69,9 +74,23 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
     <WithdrawModal
       max={stakedBalance}
       onConfirm={onUnstake}
-      tokenName={'SYRUP'}
+      tokenName={'STAX'}
     />,
   )
+
+
+  const handleUnstake = useCallback(async () => {
+    try {
+      setRequestedUnstake(true)
+      const txHash = await onUnstake()
+      // user rejected tx or didn't go thru
+      if (!txHash) {
+        setRequestedUnstake(false)
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }, [onUnstake, setRequestedUnstake])
 
   const handleApprove = useCallback(async () => {
     try {
@@ -100,19 +119,14 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
-            <Title finished={leftBlockText==='finished'}>{tokenName} Pool</Title>
-            <TokenLink href={projectLink} target="_blank">Project Site &gt; </TokenLink>
+            <Title finished={leftBlockText==='Finished'}>{tokenName} Pool</Title>
+            <Multiplier>{multi}</Multiplier>
           </StyledCardHeader>
           <StyledCardContent>
-            <img src={require(`../../../assets/img/${tokenName}.png`)} alt="" />
             <Value value={getBalanceNumber(earnings)} />
-            <Label text={`${tokenName} earned`} />
-          </StyledCardContent>
-
-          <StyledCardActions>
-            {!account &&  <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />}
-            {
-              account && harvest &&
+            <Label text={`STAX earned`} />
+{/*            {
+              account && harvest && leftBlockText==='Finished' &&
               <HarvestButton
                 disabled={!earnings.toNumber() || pendingTx}
                 text={pendingTx ? 'Collecting' : 'Harvest'}
@@ -122,33 +136,39 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
                   setPendingTx(false)
                 }}
               />
-            }
-            { account &&  (!allowance.toNumber() ? (
+            }*/}
+          </StyledCardContent>
+
+          <StyledCardActions>
+            {!account &&  <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />}
+            { account && (!allowance.toNumber() && stakingStatus===1 ? (
               <Button
-                disabled={leftBlockText==='finished' ||  requestedApproval}
+                disabled={leftBlockText==='Finished' ||  requestedApproval}
                 onClick={handleApprove}
-                text={`Approve SYRUP`}
+                text={`Approve STAX`}
               />
             ) : (
               <>
+                {stakingStatus===3 &&
                 <Button
-                  disabled={stakedBalance.eq(new BigNumber(0))}
-                  text="Unstake SYRUP"
-                  onClick={onPresentWithdraw}
-                />
+                  disabled={stakedBalance.eq(new BigNumber(0)) || requestedUnstake}
+                  text="Unstake STAX"
+                  onClick={onUnstake}
+                />}
                 <StyledActionSpacer />
-                <IconButton disabled={leftBlockText==='finished'} onClick={onPresentDeposit}>
+                {stakingStatus===1 &&
+                <IconButton disabled={leftBlockText==='Finished'} onClick={onPresentDeposit}>
                   <AddIcon/>
-                </IconButton>
+                </IconButton>}
               </>
             ))}
           </StyledCardActions>
 
-          <StyledLabel text="🍯Your Stake" value={getBalanceNumber(stakedBalance)} />
+          <StyledLabel text="Your Stake" value={getBalanceNumber(stakedBalance)} />
 
           <StyledCardFooter>
             <p>
-              Total SYRUP staked: <SmallValue value={getBalanceNumber(totalStaked)} /> <br/>
+              Total STAX staked: <SmallValue value={getBalanceNumber(totalStaked)} /> <br/>
              {leftBlockText}
             </p>
           </StyledCardFooter>
@@ -157,6 +177,18 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
     </Card>
   )
 }
+
+const Multiplier = styled.div`
+  position: absolute;
+  right: 10px;
+  line-height: 25px;
+  padding: 0 12px;
+  background: ${(props) => props.theme.colors.blue[100]};
+  color: ${(props) => props.theme.colors.bg};
+  font-weight: 900;
+  top: 20px;
+`
+
 
 const StyledCardFooter = styled.div`
   border-top: 1px solid rgb(118 69 217 / 0.2);
@@ -194,6 +226,7 @@ const TokenLink = styled.a`
 `
 
 const StyledCardHeader = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;

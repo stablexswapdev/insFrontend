@@ -27,7 +27,7 @@ const TopBar: React.FC<TopBarProps> = ({ isDark, toogleTheme, onPresentMobileMen
                         StableX Swap
                       </Link>
                     </StyledLogoWrapper>
-
+                    <Nav />
                     <StyledAccountButtonWrapper>
                         <AccountButton/>
                     </StyledAccountButtonWrapper>

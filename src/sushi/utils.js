@@ -85,14 +85,14 @@ export const getPools = (sushi)  => {
         contractAddress,
         tokenName,
         projectLink,
-        harvest
+        multi
       }) => ({
         sousId,
         sousContract,
         contractAddress,
         tokenName,
         projectLink,
-        harvest
+        multi
       }),
     )
   : [];
@@ -119,8 +119,8 @@ export const getSousEarned = async (sousChefContract, account) => {
 
 export const getTotalStaked = async (sushi, sousChefContract) => {
   const syrup = await getSyrupContract(sushi)
-  return syrup.methods
-    .balanceOf(sousChefContract.options.address)
+  return sousChefContract.methods
+    .poolAmount()
     .call()
 }
 
@@ -243,11 +243,9 @@ export const unstake = async (masterChefContract, pid, amount, account) => {
     })
 }
 
-export const sousUnstake = async (sousChefContract, amount, account) => {
+export const sousUnstake = async (sousChefContract, account) => {
   return sousChefContract.methods
-    .withdraw(
-      new BigNumber(amount).times(new BigNumber(10).pow(18)).toString(),
-    )
+    .withdraw()
     .send({ from: account })
     .on('transactionHash', (tx) => {
       console.log(tx)
@@ -294,9 +292,8 @@ export const getStaked = async (masterChefContract, pid, account) => {
 
 export const getSousStaked = async (sousChefContract, account) => {
   try {
-    console.log(sousChefContract._address, await sousChefContract.methods.userInfo(account).call())
-    const { amount } = await sousChefContract.methods
-      .userInfo(account)
+    const amount = await sousChefContract.methods
+      .poolsInfo(account)
       .call()
     return new BigNumber(amount)
   } catch(err) {
@@ -318,7 +315,7 @@ export const getSousStartBlock = async (sousChefContract) => {
 export const getSousEndBlock = async (sousChefContract) => {
   try {
     const endBlcok = await sousChefContract.methods
-      .bonusEndBlock()
+      .endBlock()
       .call()
     return endBlcok
   } catch {

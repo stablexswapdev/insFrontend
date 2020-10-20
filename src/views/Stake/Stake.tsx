@@ -75,10 +75,10 @@ const Farm: React.FC = () => {
         <>
           <PageHeader
             icon={<img src={chef} height="90" />}
-            title="Stake Cake, get SYRUP."
-            subtitle="SYRUP holders proportionally split 25% of STAX block emissions each day (10 STAX per block), Rewards are distributed each block. SYRUP will also be used to for the PancakeSwap Lottery and general governance. "
+            title="Stake Cake, get STAX."
+            subtitle="STAX holders proportionally split 25% of STAX block emissions each day (10 STAX per block), Rewards are distributed each block. STAX will also be used to for the PancakeSwap Lottery and general governance. "
           />
-          <Title>1 STAX = 1 SYRUP</Title>
+          <Title>1 STAX = 1 STAX</Title>
           <Title>You can swap back anytime</Title>
           <Spacer size="lg" />
           <StyledFarm>

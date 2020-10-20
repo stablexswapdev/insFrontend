@@ -23,22 +23,21 @@ interface SyrupRowProps {
   sousId: number
   tokenName: string
   projectLink: string
-  harvest: boolean
+  multi: string
 }
 
-const SyrupRow: React.FC<SyrupRowProps> = ({syrupAddress, sousId, tokenName, projectLink, harvest}) => {
+const SyrupRow: React.FC<SyrupRowProps> = ({syrupAddress, sousId, tokenName, projectLink, multi}) => {
   const {ethereum} = useWallet()
 
   const syrup = useMemo(() => {
-    return getContract(ethereum as provider, '0x009cF7bC57584b7998236eff51b98A168DceA9B0')
+    return getContract(ethereum as provider, '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4')
   }, [ethereum])
-
 
   return (
     <StyledCardWrapper>
       <PoolCard
         syrup={syrup}
-        {...{sousId, tokenName, projectLink, harvest}}
+        {...{sousId, tokenName, projectLink, multi}}
       />
       <StyledSpacer />
     </StyledCardWrapper>
@@ -58,9 +57,8 @@ const Farm: React.FC = () => {
     <Page>
       <>
         <PageHeader
-          icon={<img src={chef} height="90"/>}
-          title="SYRUP POOL"
-          subtitle="The Sous Chef is cooking up a treat for all SYRUP holders 🤩"
+          title="LOCKED POOL"
+          subtitle="STACK your STAX, to earn more STAX"
         />
         <Spacer size="lg"/>
         <StyledFarm>
@@ -68,20 +66,16 @@ const Farm: React.FC = () => {
             {pools.map((pool, index) =>
               <>
               <SyrupRow {...pool} />
-              {(index%3 === 0 || index%3 === 1) && <StyledSpacer />}
+              {(index%2 === 0) && <StyledSpacer />}
               </>
             )}
             <StyledCardWrapper>
-              <Coming/>
               <StyledSpacer />
             </StyledCardWrapper>
           </StyledCardsWrapper>
           <Spacer size="lg"/>
           <StyledInfo>
-            ⭐️ Stake your SYRUP to earn tokens of new projects,
-          </StyledInfo>
-          <StyledInfo>
-            Rewards will be calculated per block and can be either harvested real time or distributed automatically at the end of each project’s farming period depending on the project.
+            👀 Stake your STAX to STAX2W, STAX1M, and STAX1Y pools to earn additional vested STAX rewards! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
           </StyledInfo>
           <Spacer size="lg"/>
         </StyledFarm>
@@ -115,7 +109,7 @@ const StyledFarm = styled.div`
 
 const StyledCardsWrapper = styled.div`
   display: flex;
-  width: 900px;
+  width: 600px;
   flex-flow: row wrap;
   @media (max-width: 800px) {
     width: 100%;
@@ -135,8 +129,12 @@ const StyledInfo = styled.h3`
   color: ${(props) => props.theme.colors.grey[400]};
   font-size: 16px;
   font-weight: 400;
+  width: 600px;
   margin: 0;
   padding: 0;
+  @media (max-width: 800px) {
+    width: 80%;
+  }
 
 `
 

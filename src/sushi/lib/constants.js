@@ -24,37 +24,60 @@ export const INTEGERS = {
 
 export const contractAddresses = {
   sushi: {
-    97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+    97: '0xEc4070F7Cb3Cb944Af729D8c23F3350dF24f1003',
     56:  '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
+    // 56: '0xbbB2aaEB8c9dA72bb7faDB42A9c84AACF26974Fd'
   },
   syrup: {
-    97: '0xfE1e507CeB712BDe086f3579d2c03248b2dB77f9',
-    56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
+    97: '0xEc4070F7Cb3Cb944Af729D8c23F3350dF24f1003',
+    56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4',
   },
   masterChef: {
-    97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
+    97: '0x683B1d0CC12c8862Ce102773B4E8fFd6370d3eDA',
     56: '0xC80991F9106e26e43Bf1C07C764829a85f294C71', //  real cake
     // 56: '0x39447351Fe7939C064CDD9A258F22FC76233E28e'
   },
   sousChef: {
-    97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
+    97: '0x683B1d0CC12c8862Ce102773B4E8fFd6370d3eDA',
     56: '0x6ab8463a4185b80905e05a9ff80a2d6b714b9e95', //  real cake
   },
   weth: {
     97: '0xae13d989dac2f0debff460ac112a837c89baa7cd',
     56: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c',
-  },
-  lottery: {
-    97: '0xCd1D9c9bD049C882A05353b7C646F423e1603Ce1',
-    56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-  },
-  lotteryNFT: {
-    97: '0x329Ca0d33261d6F3144Ae7540e44b5044dDeb1bd',
-    56: '0x009cF7bC57584b7998236eff51b98A168DceA9B0',
-  },
+  }
 }
 
-export const sousChefTeam = []
+export const sousChefTeam = [
+  {
+    sousId: 0,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0xB561f9f117acaa5512f2790354f59202b0C3642B',
+    },
+    tokenName: 'STAX2W',
+    tokenPerBlock: "20",
+    multi: 'x2'
+  },
+  {
+    sousId: 1,
+    contractAddress: {
+      97: '0x108f53C0e26C005B9DC40131de7B0fb9D3303757',
+      56: '0xb4239e11CC41562288cF9f9162540066b491D2c3',
+    },
+    tokenName: 'STAX1M',
+    tokenPerBlock: "20",
+    multi: 'x3'
+  },
+  {
+    sousId: 2,
+    contractAddress: {
+      97: '0x6dA4eaff1B3fbe39E7915399EB3FD957B32608E7',
+      56: '0x0c0C475e32212b748c328E451Ab3862FfE07369E',
+    },
+    tokenName: 'STAX1Y',
+    multi: 'x8'
+  },
+]
 
 // BUSD-BNB LP
 // 0x1b96b92314c44b159149f7e0303511fb2fc4774f
@@ -69,29 +92,30 @@ export const supportedPools = [
     pid: 0,
     lpAddresses: {
       97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
-<<<<<<< HEAD
       56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
       56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
-=======
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    },
-    tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0xf68fd424597e6c872d46241fb745167e2c380063',
->>>>>>> a792be73b2c53a19cfefb8817f7d0d62c8b4878e
     },
     name: 'STAX STAKING',
     tokenSymbol: 'STAX',
     symbol: 'STAX-BNB FLIP',
-<<<<<<< HEAD
     multiplier: '5X'
-=======
-    icon: '🍊',
-    multiplier: '5X',
->>>>>>> a792be73b2c53a19cfefb8817f7d0d62c8b4878e
+  },
+  {
+    pid: 4,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x13AbFA7B781bEe80cA7FAe7Ec71045488d876A8d'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+    },
+    symbol: 'STAX-BUSD FLIP',
+    tokenSymbol: 'BUSD',
+    multiplier: '5X'
   },
   {
     pid: 1,
@@ -101,56 +125,32 @@ export const supportedPools = [
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-<<<<<<< HEAD
       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
     },
     name: 'Cake STAKING',
     symbol: 'BUSD-USDT FLIP',
     tokenSymbol: 'BUSD',
     multiplier: '3X'
-=======
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    },
-    name: 'Cake STAKING',
-    symbol: 'BUSD-USDT FLIP',
-    tokenSymbol: 'BUST',
-    icon: '🍊',
-    multiplier: '3X',
->>>>>>> a792be73b2c53a19cfefb8817f7d0d62c8b4878e
   },
   {
     pid: 2,
     lpAddresses: {
       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-<<<<<<< HEAD
       56: '0x3aB77e40340AB084c3e23Be8e5A6f7afed9D41DC'
     },
     tokenAddresses: {
       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
-=======
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    },
-    tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
->>>>>>> a792be73b2c53a19cfefb8817f7d0d62c8b4878e
     },
     name: 'Cake Party!',
     symbol: 'BUSD-DAI FLIP',
     tokenSymbol: 'DAI',
-<<<<<<< HEAD
     multiplier: '3X'
-=======
-    icon: '🍊',
-    multiplier: '3X',
->>>>>>> a792be73b2c53a19cfefb8817f7d0d62c8b4878e
   },
   {
     pid: 3,
     lpAddresses: {
       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-<<<<<<< HEAD
       56: '0xb3c4217AB2b265bF8c69718D280E3708b5E50577'
     },
     tokenAddresses: {
@@ -161,20 +161,7 @@ export const supportedPools = [
     symbol: 'USDT-DAI FLIP',
     tokenSymbol: 'USDT',
     multiplier: '3X'
-=======
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    },
-    tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
-    },
-    name: 'Cake Party!',
-    symbol: 'USDT-DAI FLIP',
-    tokenSymbol: 'DAI',
-    icon: '🍊',
-    multiplier: '3X',
->>>>>>> a792be73b2c53a19cfefb8817f7d0d62c8b4878e
-  },
+  }
 ]
 
 export const forShowPools = [
@@ -182,6 +169,12 @@ export const forShowPools = [
     pid: 0,
     name: 'Oranges Party!',
     symbol: 'STAX-BNB',
+    tokenSymbol: 'STAX',
+    multiplier: '5X',
+  },
+  {
+    pid: 4,
+    symbol: 'STAX-BUSD',
     tokenSymbol: 'STAX',
     multiplier: '5X',
   },

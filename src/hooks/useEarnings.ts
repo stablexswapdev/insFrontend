@@ -69,6 +69,7 @@ export const useSousLeftBlocks = (sousId) => {
   const fetchBalance = useCallback(async () => {
     const start = await getSousStartBlock(sousChefContract)
     const end = await getSousEndBlock(sousChefContract)
+    console.log(block, start, end)
     let buttonText = ''
     if (!block) {
       buttonText= '-'
@@ -77,10 +78,50 @@ export const useSousLeftBlocks = (sousId) => {
       buttonText = `Farming starts in ${(start - block).toLocaleString()} Blocks`
     }
     else if(block > end) {
-      buttonText = 'finished'
+      buttonText = 'Finished'
     }
     else {
       buttonText = `Farming ends in ${(end - block).toLocaleString()} Blocks`
+    }
+    setText(buttonText)
+  }, [account, block, sousChefContract, sushi])
+
+  useEffect(() => {
+    if (account && sousChefContract && sushi) {
+      fetchBalance()
+    }
+  }, [account, block, sousChefContract, setText, sushi])
+
+  return text
+}
+
+
+export const useSousLeftBlocksStatus = (sousId) => {
+  const [text, setText] = useState(0)
+  const {
+    account,
+    ethereum,
+  }: { account: string; ethereum: provider } = useWallet()
+  const sushi = useSushi()
+  const sousChefContract = getSousChefContract(sushi, sousId)
+  const block = useBlock()
+
+  const fetchBalance = useCallback(async () => {
+    const start = await getSousStartBlock(sousChefContract)
+    const end = await getSousEndBlock(sousChefContract)
+    console.log(block, start, end)
+    let buttonText = 0
+    if (!block) {
+      buttonText= 0
+    }
+    else if (block < start) {
+      buttonText = 1;
+    }
+    else if(block > end) {
+      buttonText = 3;
+    }
+    else {
+      buttonText = 2;
     }
     setText(buttonText)
   }, [account, block, sousChefContract, sushi])

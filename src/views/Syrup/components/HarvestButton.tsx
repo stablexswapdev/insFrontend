@@ -105,7 +105,7 @@ const StyledButton = styled.button<StyledButtonProps>`
   width: 100%;
   border: 2px solid ${props => !props.disabled ? `#33cbd7` : `#eee`};;
   position: absolute;
-  top: 80px;
+  top: 20px;
   width: 100px;
   right: 10px;
   height: 30px;

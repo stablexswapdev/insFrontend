@@ -16,7 +16,7 @@ export const grey = {
   300: '#FFFDFA',
   400: '#888583',
   500: '#805e49',
-  600: '#452A7A', // dark primary
+  600: '#000000', // dark primary
   800: '#2d1e12',
 }
 

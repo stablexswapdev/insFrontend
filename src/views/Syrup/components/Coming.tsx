@@ -39,7 +39,6 @@ const Coming: React.FC = () => {
             <Title>Coming Soon 👀</Title>
           </StyledCardHeader>
           <StyledCardContent>
-            <CardIcon>⏳</CardIcon>
             <Value value={'???'} />
             <Label text={`??? earned`} />
           </StyledCardContent>
@@ -51,11 +50,11 @@ const Coming: React.FC = () => {
             />
           </StyledCardActions>
 
-          <StyledLabel text="🍯Your Stake" value={0} />
+          <StyledLabel text="Your Stake" value={0} />
 
           <StyledCardFooter>
             <p>
-              Total SYRUP staked: 0 <br/>
+              Total STAX staked: 0 <br/>
              Farming starts in ??? Blocks
             </p>
           </StyledCardFooter>

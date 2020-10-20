@@ -55,10 +55,10 @@ const App: React.FC = () => {
             <Route path="/farms">
               <Farms removed={false}/>
             </Route>
-            <Route path="/staking">
+            <Route path="/staking2">
               <Stake />
             </Route>
-            <Route path="/syrup">
+            <Route path="/staking">
               <Syrup />
             </Route>
             <Route path="/lottery">

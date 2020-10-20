@@ -27,9 +27,13 @@ export const useSousUnstake = (sousId) => {
   const sousChefContract = getSousChefContract(sushi, sousId)
 
   const handleUnstake = useCallback(
-    async (amount: string) => {
-      const txHash = await sousUnstake(sousChefContract, amount, account)
-      console.log(txHash)
+    async () => {
+      try {
+        const txHash = await sousUnstake(sousChefContract, account)
+        return txHash
+      } catch (e) {
+        return false
+      }
     },
     [account, sushi, sousChefContract],
   )

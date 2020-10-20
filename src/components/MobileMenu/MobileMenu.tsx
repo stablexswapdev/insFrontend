@@ -38,7 +38,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({onDismiss, visible}) => {
                         activeClassName="active"
                         to="/syrup"
                         onClick={onDismiss}>
-                        🍯 SYRUP Pool
+                        🍯 STAX Pool
                     </StyledLink>
                     <a style={{
                         paddingTop: "0.6em",

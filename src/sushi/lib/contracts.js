@@ -66,8 +66,6 @@ export class Contracts {
     setProvider(this.masterChef, contractAddresses.masterChef[networkId])
     setProvider(this.weth, contractAddresses.weth[networkId])
     setProvider(this.sousChef, contractAddresses.sousChef[networkId])
-    setProvider(this.lottery, contractAddresses.lottery[networkId])
-    setProvider(this.lotteryNft, contractAddresses.lotteryNFT[networkId])
 
     this.pools.forEach(
       ({ lpContract, lpAddress, tokenContract, tokenAddress }) => {
@@ -88,8 +86,6 @@ export class Contracts {
     this.masterChef.options.from = account
     this.syrup.options.from = account
     this.sousChef.options.from = account
-    this.lottery.options.from = account
-    this.lotteryNft.options.from = account
   }
 
   async callContractFunction(method, options) {
