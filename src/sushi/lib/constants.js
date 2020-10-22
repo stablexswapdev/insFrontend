@@ -49,6 +49,16 @@ export const contractAddresses = {
 
 export const sousChefTeam = [
   {
+    sousId: 3,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0xCe4Cf2251489bEe010719c5e4cfd8AFcc3d1D376',
+    },
+    tokenName: '2W-AIRDROP',
+    tokenPerBlock: "20",
+    multi: 'x2'
+  },
+  {
     sousId: 0,
     contractAddress: {
       97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',

@@ -24,7 +24,9 @@ const StyledNav = styled.nav`
   align-items: center;
   display: flex;
   @media (max-width: 850px) {
-    display: none;
+      a:first-child {
+        display: none;
+      }
   }
 `
 
