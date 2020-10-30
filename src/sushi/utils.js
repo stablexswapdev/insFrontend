@@ -114,6 +114,7 @@ export const getEarned = async (masterChefContract, pid, account) => {
 }
 
 export const getSousEarned = async (sousChefContract, account) => {
+  console.log('ddd', sousChefContract.options.address, account)
   return sousChefContract.methods.pendingReward(account).call()
 }
 

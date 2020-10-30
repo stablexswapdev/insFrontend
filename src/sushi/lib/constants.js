@@ -49,6 +49,16 @@ export const contractAddresses = {
 
 export const sousChefTeam = [
   {
+    sousId: 4,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0x2C43BC85A4a08757666219E0305a98b6CBdbb7eA',
+    },
+    tokenName: 'STAX2W',
+    tokenPerBlock: "20",
+    multi: 'x2'
+  },
+  {
     sousId: 3,
     contractAddress: {
       97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
@@ -171,6 +181,21 @@ export const supportedPools = [
     symbol: 'USDT-DAI FLIP',
     tokenSymbol: 'USDT',
     multiplier: '3X'
+  },
+  {
+    pid: 8,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x85f8628bfff75d08f1aa415e5c7e85d96bfd7f57'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'
+    },
+    name: 'Cake Party!',
+    symbol: 'USDT-USDC FLIP',
+    tokenSymbol: 'USDC',
+    multiplier: '3X'
   }
 ]
 
@@ -204,6 +229,12 @@ export const forShowPools = [
     pid: 3,
     symbol: 'USDT-DAI',
     tokenSymbol: 'DAI',
+    multiplier: '3X',
+  },
+  {
+    pid: 4,
+    symbol: 'USDT-USDC',
+    tokenSymbol: 'USDC',
     multiplier: '3X',
   },
 ]

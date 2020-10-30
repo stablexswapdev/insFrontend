@@ -44,11 +44,12 @@ export const useSousEarnings = (sousId) => {
 
   const fetchBalance = useCallback(async () => {
     const balance = await getSousEarned(sousChefContract, account)
+    console.log('balance',  balance.toString())
     setBalance(new BigNumber(balance))
-  }, [account, block, sousChefContract, sushi])
+  }, [account, block, sousChefContract, setBalance, sushi])
 
   useEffect(() => {
-    if (account && sousChefContract && sushi) {
+    if (account && sousChefContract) {
       fetchBalance()
     }
   }, [account, block, sousChefContract, setBalance, sushi])
