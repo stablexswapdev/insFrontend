@@ -47,7 +47,7 @@ export const contractAddresses = {
   }
 }
 
-export const sousChefTeam = {
+export const sousChefTeam = [
   {
     sousId: 5,
     contractAddress: {
