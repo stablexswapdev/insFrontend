@@ -76,13 +76,14 @@ export const useSousLeftBlocks = (sousId) => {
       buttonText= '-'
     }
     else if (block < start) {
-      buttonText = `Farming starts in ${(start - block).toLocaleString()} Blocks`
+      // @ts-ignore
+      buttonText = `Farming starts in ${Math.floor((start - block)/1200)} Hours ${Math.floor((start - block)/20)%60} Mins`
     }
     else if(block > end) {
       buttonText = 'Finished'
     }
     else {
-      buttonText = `Farming ends in ${(end - block).toLocaleString()} Blocks`
+      buttonText = `Farming ends in ${Math.floor((end - block)/1200)} Hours ${Math.floor((end - block)/20)%60} Mins`
     }
     setText(buttonText)
   }, [account, block, sousChefContract, sushi])
