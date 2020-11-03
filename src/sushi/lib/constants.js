@@ -47,7 +47,17 @@ export const contractAddresses = {
   }
 }
 
-export const sousChefTeam = [
+export const sousChefTeam = {
+  {
+    sousId: 5,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0x252B23B524F8a93506c02ff355780Ced62EA4004',
+    },
+    tokenName: 'STAX1M',
+    tokenPerBlock: "20",
+    multi: 'x3'
+  },
   {
     sousId: 4,
     contractAddress: {
