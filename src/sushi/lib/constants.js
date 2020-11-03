@@ -49,6 +49,16 @@ export const contractAddresses = {
 
 export const sousChefTeam = [
   {
+    sousId: 5,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0x252B23B524F8a93506c02ff355780Ced62EA4004',
+    },
+    tokenName: 'STAX1M',
+    tokenPerBlock: "20",
+    multi: 'x3'
+  },
+  {
     sousId: 4,
     contractAddress: {
       97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
@@ -196,6 +206,96 @@ export const supportedPools = [
     symbol: 'USDT-USDC FLIP',
     tokenSymbol: 'USDC',
     multiplier: '3X'
+  },
+  {
+    pid: 10,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0xC1400900705F85544A6AbBe21B688411D58fb98A'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+    },
+    name: 'Cake Party!',
+    symbol: 'BUSD-USDT SLP',
+    tokenSymbol: 'BUSD',
+    multiplier: '4X'
+  },
+  {
+    pid: 11,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0xcFaFFc0728f1D2521E90A6A49e4bEc54D93c107a'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+    },
+    name: 'Cake Party!',
+    symbol: 'BUSD-DAI SLP',
+    tokenSymbol: 'DAI',
+    multiplier: '4X'
+  },
+  {
+    pid: 12,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0xefD05F48e337A50CDF36c60baa32FE3d3a7aCbE6'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+    },
+    name: 'Cake Party!',
+    symbol: 'BUSD-USDC SLP',
+    tokenSymbol: 'USDC',
+    multiplier: '1X'
+  },
+  {
+    pid: 13,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x9897D186087e8aDb05B657B0DC9A326D898FF7B1'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3'
+    },
+    name: 'Cake Party!',
+    symbol: 'DAI-USDT SLP',
+    tokenSymbol: 'DAI',
+    multiplier: '2X'
+  },
+  {
+    pid: 14,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0xBB1F42E75C83917FdeDd25080dE5AA0E78c35f82'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'
+    },
+    name: 'Cake Party!',
+    symbol: 'USDC-USDT SLP',
+    tokenSymbol: 'USDC',
+    multiplier: '3X'
+  },
+  {
+    pid: 15,
+    lpAddresses: {
+      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
+      56: '0x68D93eFCd107A044F2dc201548B59A0EBF4181c6'
+    },
+    tokenAddresses: {
+      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'
+    },
+    name: 'Cake Party!',
+    symbol: 'DAI-USDC SLP',
+    tokenSymbol: 'USDC',
+    multiplier: '2X'
   }
 ]
 

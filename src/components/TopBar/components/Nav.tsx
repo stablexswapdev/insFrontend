@@ -7,29 +7,41 @@ const Nav: React.FC = () => {
     <>
       <StyledNav>
         <StyledLink exact activeClassName="active" to="/">
-         Home
+          Home
         </StyledLink>
         <StyledLink exact activeClassName="active" to="/staking">
           Staking
         </StyledLink>
       </StyledNav>
+      <ExternalLink href="https://trade.stablexswap.com">
+        Swap(Beta)
+      </ExternalLink>
     </>
   )
 }
-
-
-
 
 const StyledNav = styled.nav`
   align-items: center;
   display: flex;
   @media (max-width: 850px) {
-      a:first-child {
-        display: none;
-      }
+    a:first-child {
+      display: none;
+    }
   }
 `
 
+const ExternalLink = styled.a`
+  font-weight: 700;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #888583;
+  text-decoration: none;
+  @media (max-width: 850px) {
+    a:first-child {
+      display: none;
+    }
+  }
+`
 const StyledLink = styled(NavLink)`
   color: ${(props) => props.theme.colors.grey[400]};
   font-weight: 700;
@@ -55,7 +67,7 @@ const StyledAbsoluteLink = styled.a`
   padding-right: ${(props) => props.theme.spacing[3]}px;
   text-decoration: none;
   &:hover {
-    color: #452A7A;
+    color: #452a7a;
   }
   &.active {
     color: ${(props) => props.theme.colors.grey[600]};

@@ -36,11 +36,22 @@ const Home: React.FC = () => {
       <Spacer />
       <Container>
         <Balances />
-        <Spacer />      <StyledInfo>
-<a target="_blank" href="https://exchange.pancakeswap.finance/#/add/ETH/0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4">➡️ Add Pool </a>
-<br/>
-<a target="_blank" href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4">➡️ Buy STAX </a>
-      </StyledInfo>
+        <Spacer />{' '}
+        <StyledInfo>
+          <a
+            target="_blank"
+            href="https://exchange.pancakeswap.finance/#/add/ETH/0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4"
+          >
+            ➡️ Add Pool{' '}
+          </a>
+          <br />
+          <a
+            target="_blank"
+            href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4"
+          >
+            ➡️ Buy STAX{' '}
+          </a>
+        </StyledInfo>
         <FarmCards removed={false} />
       </Container>
       <Spacer size="lg" />
