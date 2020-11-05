@@ -147,14 +147,18 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
                 onClick={handleApprove}
                 text={`Approve STAX`}
               />
-            ) : (
+            ) 
+            : (
               <>
-                {stakingStatus===3 &&
+              {stakingStatus===3 &&
+                <Label text="We're fixing, Funds are SAFU" />
+              }
+                {/* {stakingStatus===3 &&
                 <Button
                   disabled={stakedBalance.eq(new BigNumber(0)) || requestedUnstake}
                   text="Unstake STAX"
                   onClick={onUnstake}
-                />}
+                />} */}
                 <StyledActionSpacer />
                 {stakingStatus===1 &&
                 <IconButton disabled={leftBlockText==='Finished'} onClick={onPresentDeposit}>
