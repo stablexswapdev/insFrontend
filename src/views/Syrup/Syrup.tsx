@@ -56,8 +56,15 @@ const Farm: React.FC = () => {
   return (
     <Page>
       <>
+
+      <PageHeader
+          title="NEW 500% APY FLEXIBLE STAKING PROGRAM"
+          subtitle="STACK your STAX simply by HODLing in your own wallet!"
+        />
+        <a target = "_blank" rel = "noopener noreferrer" href="https://medium.com/stablexswap/funds-are-safu-fixing-our-fixed-term-staking-and-introducing-the-new-stax-500-apy-flexible-647d15efd224">Learn More on Our Medium</a>
+
         <PageHeader
-          title="LOCKED POOL"
+          title="PREVIOUS LOCKED POOLS"
           subtitle="STACK your STAX, to earn more STAX"
         />
         <Spacer size="lg"/>
