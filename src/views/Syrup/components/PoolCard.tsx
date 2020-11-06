@@ -144,11 +144,12 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
           <StyledCardActions>
             {!account &&  <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />}
             { account && (!allowance.toNumber() && stakingStatus===1 ? (
-              <Button
-                disabled={leftBlockText==='Finished' ||  requestedApproval}
-                onClick={handleApprove}
-                text={`Approve STAX`}
-              />
+              <Label text="Temporarily unavailable, please simply HODL for Flex Staking Rewards"/>
+              // <Button
+              //   disabled={leftBlockText==='Finished' ||  requestedApproval}
+              //   onClick={handleApprove}
+              //   text={`Approve STAX`}
+              // />
             ) 
             : (
               <>
