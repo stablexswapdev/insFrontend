@@ -154,7 +154,7 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
             : (
               <>
               {stakingStatus===3 &&
-                <Label text="We're fixing, Funds are SAFU" />
+                <Label text="Funds have been manually distributed" />
               }
                 {/* {stakingStatus===3 &&
                 <Button
