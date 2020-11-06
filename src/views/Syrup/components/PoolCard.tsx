@@ -123,8 +123,10 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
             <Multiplier>{multi}</Multiplier>
           </StyledCardHeader>
           <StyledCardContent>
-            <Value value={getBalanceNumber(earnings)} />
-            <Label text={`STAX earned`} />
+  {stakingStatus === 3 && <Label text={"Campaign over"}/> }
+  {stakingStatus !== 3  &&  <Value value={getBalanceNumber(earnings)} /> }
+  {stakingStatus !== 3  &&  <Label text={`STAX earned`} /> }
+      
 {/*            {
               account && harvest && leftBlockText==='Finished' &&
               <HarvestButton
@@ -147,14 +149,18 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
                 onClick={handleApprove}
                 text={`Approve STAX`}
               />
-            ) : (
+            ) 
+            : (
               <>
-                {stakingStatus===3 &&
+              {stakingStatus===3 &&
+                <Label text="We're fixing, Funds are SAFU" />
+              }
+                {/* {stakingStatus===3 &&
                 <Button
                   disabled={stakedBalance.eq(new BigNumber(0)) || requestedUnstake}
                   text="Unstake STAX"
                   onClick={onUnstake}
-                />}
+                />} */}
                 <StyledActionSpacer />
                 {stakingStatus===1 &&
                 <IconButton disabled={leftBlockText==='Finished'} onClick={onPresentDeposit}>
