@@ -154,8 +154,9 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
             : (
               <>
               {stakingStatus===3 &&
-                <Label text="Funds have been manually distributed, Please check the distribution stats here:" />              }
-               <a target = "_blank" rel = "noopener noreferrer" href="https://tinyurl.com/2wstax">Link To Google Sheets</a>
+                <Label text="Funds have been manually distributed, Please check the distribution stats here:"  />   &&
+                <a target = "_blank" rel = "noopener noreferrer" href="https://tinyurl.com/2wstax">Link To Google Sheets</a>            }
+
                 {/* {stakingStatus===3 &&
                 <Button
                   disabled={stakedBalance.eq(new BigNumber(0)) || requestedUnstake}
