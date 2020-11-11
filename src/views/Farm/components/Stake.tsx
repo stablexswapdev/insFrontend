@@ -83,6 +83,23 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
     onPresentWalletProviderModal()
   }, [onPresentWalletProviderModal])
 
+  const renderUnStakeButton = () => {
+    return tokenName.includes('SLP') ? (
+      ''
+    ) : (
+      <>
+        <Button
+          disabled={stakedBalance.eq(new BigNumber(0))}
+          text="Unstake"
+          onClick={onPresentWithdraw}
+        />
+        <StyledActionSpacer />
+        <IconButton onClick={onPresentDeposit}>
+          <AddIcon />
+        </IconButton>
+      </>
+    )
+  }
 
   return (
     <Card>
@@ -94,26 +111,23 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
             <Label text={`${tokenName} Tokens Staked`} />
           </StyledCardHeader>
           <StyledCardActions>
-            {!account &&  <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />}
-            { account && (!allowance.toNumber() ? (
+            {!account && (
               <Button
-                disabled={requestedApproval}
-                onClick={handleApprove}
-                text={`Approve ${tokenName}`}
+                onClick={handleUnlockClick}
+                size="md"
+                text="Unlock Wallet"
               />
-            ) : (
-              <>
+            )}
+            {account &&
+              (!allowance.toNumber() ? (
                 <Button
-                  disabled={stakedBalance.eq(new BigNumber(0))}
-                  text="Unstake"
-                  onClick={onPresentWithdraw}
+                  disabled={requestedApproval}
+                  onClick={handleApprove}
+                  text={`Approve ${tokenName}`}
                 />
-                <StyledActionSpacer />
-                <IconButton onClick={onPresentDeposit}>
-                  <AddIcon />
-                </IconButton>
-              </>
-            ))}
+              ) : (
+                renderUnStakeButton()
+              ))}
           </StyledCardActions>
         </StyledCardContentInner>
       </CardContent>

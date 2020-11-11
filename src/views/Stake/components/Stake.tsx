@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import { Contract } from 'web3-eth-contract'
@@ -82,6 +82,24 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
     onPresentWalletProviderModal()
   }, [onPresentWalletProviderModal])
 
+  const renderUnStakeButton = () => {
+    return tokenName.includes('SLP') ? (
+      ''
+    ) : (
+      <>
+        <Button
+          disabled={stakedBalance.eq(new BigNumber(0))}
+          text="Unstake"
+          onClick={onPresentWithdraw}
+        />
+        <StyledActionSpacer />
+        <IconButton onClick={onPresentDeposit}>
+          <AddIcon />
+        </IconButton>
+      </>
+    )
+  }
+
   return (
     <Card>
       <CardContent>
@@ -92,26 +110,23 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
             <Label text={`${tokenName} Tokens Staked`} />
           </StyledCardHeader>
           <StyledCardActions>
-            {!account &&  <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />}
-            { account &&  (!allowance.toNumber() ? (
+            {!account && (
               <Button
-                disabled={requestedApproval}
-                onClick={handleApprove}
-                text={`Approve ${tokenName}`}
+                onClick={handleUnlockClick}
+                size="md"
+                text="Unlock Wallet"
               />
-            ) : (
-              <>
+            )}
+            {account &&
+              (!allowance.toNumber() ? (
                 <Button
-                  disabled={stakedBalance.eq(new BigNumber(0))}
-                  text="Unstake"
-                  onClick={onPresentWithdraw}
+                  disabled={requestedApproval}
+                  onClick={handleApprove}
+                  text={`Approve ${tokenName}`}
                 />
-                <StyledActionSpacer />
-                <IconButton onClick={onPresentDeposit}>
-                  <AddIcon />
-                </IconButton>
-              </>
-            ))}
+              ) : (
+                renderUnStakeButton()
+              ))}
           </StyledCardActions>
         </StyledCardContentInner>
       </CardContent>
