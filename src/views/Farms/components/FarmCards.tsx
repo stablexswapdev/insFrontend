@@ -49,7 +49,7 @@ const FarmCards: React.FC<FarmCardsProps> = ({ removed }) => {
       : new BigNumber(0)
 
   const BLOCKS_PER_YEAR = new BigNumber(10512000)
-  const SUSHI_PER_BLOCK = new BigNumber(20)
+  const SUSHI_PER_BLOCK = new BigNumber(2)
 
   const [onPresentAccountModal] = useModal(<AccountModal />)
   const [onPresentWalletProviderModal] = useModal(
