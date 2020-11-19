@@ -337,5 +337,5 @@ export const forShowPools = [
     symbol: 'USDT-USDC',
     tokenSymbol: 'USDTUSDC',
     multiplier: '3X',
-  },
+  }
 ]
