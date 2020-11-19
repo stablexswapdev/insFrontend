@@ -56,7 +56,7 @@ const Menu = styled.div`
 
 const StyledLogoWrapper = styled.div`
   width: 260px;
-  font-family: "Kaushan Script", sans-serif;
+  font-family: "Quicksand", sans-serif;
   @media (max-width: 420px) {
     width: auto;
   }
