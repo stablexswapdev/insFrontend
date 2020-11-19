@@ -24,7 +24,7 @@ const TopBar: React.FC<TopBarProps> = ({ isDark, toogleTheme, onPresentMobileMen
                     <StyledLogoWrapper>
                       <Link to="/">
                         <img src={title} height="28" />
-                        StableX Swap
+                        stableXswap
                       </Link>
                     </StyledLogoWrapper>
                     <Nav />
