@@ -35,9 +35,7 @@ const Home: React.FC = () => {
     <Page>
       <Spacer />
       <Container>
-        <Balances />
-        <Spacer />{' '}
-        <StyledInfo>
+         <StyledInfo>
            <a
             target="_blank" 
             href="https://trade.stablexswap.com"
@@ -60,6 +58,10 @@ const Home: React.FC = () => {
             ➡️ Buy STAX{' '}
           </a>
         </StyledInfo>
+        
+        <Balances />
+        <Spacer />{' '}
+       
         <FarmCards removed={false} />
       </Container>
       <Spacer size="lg" />
