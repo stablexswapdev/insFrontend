@@ -59,6 +59,7 @@ const Home: React.FC = () => {
           </a>
         </StyledInfo>
         
+        <Spacer />{' '}
         <Balances />
         <Spacer />{' '}
        
