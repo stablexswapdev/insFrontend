@@ -8,7 +8,7 @@ import PageHeader from '../../components/PageHeader'
 import Spacer from '../../components/Spacer'
 import Balances from './components/Balances'
 import FarmCards from '../Farms/components/FarmCards'
-import Promo from '../../assets/promo.png'
+// import Promo from '../../assets/promo.png'
 
 const Home: React.FC = () => {
   const [currentTime, setCurrentTime] = React.useState(
@@ -37,7 +37,7 @@ const Home: React.FC = () => {
       <Spacer />
       <Container>
        
-        <Image src={Promo}/>
+<!--         <Image src={Promo}/> -->
       
          <Spacer />{' '}
          <StyledInfo>
