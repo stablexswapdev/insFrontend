@@ -35,6 +35,8 @@ const Home: React.FC = () => {
     <Page>
       <Spacer />
       <Container>
+        <Image src={require(`../../assets/promo.png`)}/>
+         <Spacer />{' '}
          <StyledInfo>
            <a
             target="_blank" 
