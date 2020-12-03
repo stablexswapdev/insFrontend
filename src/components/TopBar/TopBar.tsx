@@ -67,7 +67,7 @@ const StyledLogoWrapper = styled.div`
   a {
     text-decoration: none;
     color: ${(props) => props.theme.colors.text};
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 900;
   }
 `
