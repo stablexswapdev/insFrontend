@@ -38,11 +38,19 @@ const Home: React.FC = () => {
         <Balances />
         <Spacer />{' '}
         <StyledInfo>
+           <a
+            target="_blank" 
+            href="https://trade.stablexswap.com"
+          >
+            ➡️ Try the new swap!{' '}
+          </a>
+          <br />
+          
           <a
             target="_blank"
             href="https://exchange.pancakeswap.finance/#/add/ETH/0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4"
           >
-            ➡️ Add Pool{' '}
+            ➡️ Add STAX Liquidity{' '}
           </a>
           <br />
           <a
