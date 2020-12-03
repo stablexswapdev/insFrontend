@@ -35,7 +35,12 @@ const Home: React.FC = () => {
     <Page>
       <Spacer />
       <Container>
+           <a
+            target="_blank" 
+            href="https://trade.stablexswap.com?ref=homepageimage"
+          >
         <Image src={require(`../../assets/promo.png`)}/>
+        </a>
          <Spacer />{' '}
          <StyledInfo>
            <a
