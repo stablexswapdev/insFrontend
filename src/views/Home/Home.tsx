@@ -35,14 +35,20 @@ const Home: React.FC = () => {
     <Page>
       <Spacer />
       <Container>
-        <Balances />
-        <Spacer />{' '}
-        <StyledInfo>
+         <StyledInfo>
+           <a
+            target="_blank" 
+            href="https://trade.stablexswap.com?ref=homepage"
+          >
+            ➡️ Try the new swap!{' '}
+          </a>
+          <br />
+          
           <a
             target="_blank"
             href="https://exchange.pancakeswap.finance/#/add/ETH/0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4"
           >
-            ➡️ Add Pool{' '}
+            ➡️ Add STAX Liquidity{' '}
           </a>
           <br />
           <a
@@ -52,6 +58,10 @@ const Home: React.FC = () => {
             ➡️ Buy STAX{' '}
           </a>
         </StyledInfo>
+        
+        <Balances />
+        <Spacer />{' '}
+       
         <FarmCards removed={false} />
       </Container>
       <Spacer size="lg" />
