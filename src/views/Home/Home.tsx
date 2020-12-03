@@ -36,9 +36,7 @@ const Home: React.FC = () => {
     <Page>
       <Spacer />
       <Container>
-       
-<!--         <Image src={Promo}/> -->
-      
+    
          <Spacer />{' '}
          <StyledInfo>
            <a
