@@ -44,6 +44,11 @@ const Home: React.FC = () => {
             href="https://trade.stablexswap.com?ref=homepage"
           > */}
             Welcome BSC's first insurance mining{' '}
+ <br/>
+            <a target="_blank"
+            href="https://testnet.binance.org/faucet-smart">
+              Get Testnet BUSD to mint iSTAX and test the insurance pools!
+            </a>
           {/* </a> */}
 
            {/* <a

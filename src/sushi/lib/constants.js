@@ -196,221 +196,99 @@ export const supportedPools = [
   {
     pid: 0,
     lpAddresses: {
-      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee',
       56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
-      97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
+      97: '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1', 
+      // 97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
       56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     },
-    name: 'STAX STAKING',
-    tokenSymbol: 'STAX',
-    symbol: 'STAX-BNB FLIP',
-    multiplier: '5X'
-  },
-  {
-    pid: 4,
-    lpAddresses: {
-      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x13AbFA7B781bEe80cA7FAe7Ec71045488d876A8d'
-    },
-    tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
-    },
-    symbol: 'STAX-BUSD FLIP',
-    tokenSymbol: 'BUSD',
-    multiplier: '5X'
+    name: 'BUSD Staking',
+    tokenSymbol: 'iSTAX',
+    symbol: 'TESTNET BUSD',
+    multiplier: '1X'
   },
   {
     pid: 1,
     lpAddresses: {
-      97: '0xe70b7523f4bffa1f2e88d2ba709afd026030f412',
-      56: '0xc15fa3E22c912A276550F3E5FE3b0Deb87B55aCd',
+      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+      97: '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1', 
+      // 97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
+      56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     },
-    name: 'Cake STAKING',
-    symbol: 'BUSD-USDT FLIP',
-    tokenSymbol: 'BUSD',
-    multiplier: '3X'
+    name: 'STAX STAKING',
+    tokenSymbol: 'iSTAX',
+    symbol: 'STAX-BNB FLIP',
+    multiplier: '5X'
   },
   {
     pid: 2,
     lpAddresses: {
-      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x3aB77e40340AB084c3e23Be8e5A6f7afed9D41DC'
+      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
+      97: '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1', 
+      // 97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
+      56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     },
-    name: 'Cake Party!',
-    symbol: 'BUSD-DAI FLIP',
-    tokenSymbol: 'DAI',
+    name: 'STAX STAKING',
+    tokenSymbol: 'iSTAX',
+    symbol: 'BUSD-USDT STAXLP',
     multiplier: '3X'
   },
   {
     pid: 3,
     lpAddresses: {
-      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0xb3c4217AB2b265bF8c69718D280E3708b5E50577'
+      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x55d398326f99059ff775485246999027b3197955'
+      97: '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1', 
+      // 97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
+      56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     },
-    name: 'Cake Party!',
-    symbol: 'USDT-DAI FLIP',
-    tokenSymbol: 'USDT',
+    name: 'STAX STAKING',
+    tokenSymbol: 'iSTAX',
+    symbol: 'BUSD-DAI STAXLP',
     multiplier: '3X'
   },
-  {
-    pid: 8,
-    lpAddresses: {
-      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0x85f8628bfff75d08f1aa415e5c7e85d96bfd7f57'
-    },
-    tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'
-    },
-    name: 'Cake Party!',
-    symbol: 'USDT-USDC FLIP',
-    tokenSymbol: 'USDC',
-    multiplier: '3X'
-  }
-//   ,
-//   {
-//     pid: 10,
-//     lpAddresses: {
-//       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-//       56: '0xC1400900705F85544A6AbBe21B688411D58fb98A'
-//     },
-//     tokenAddresses: {
-//       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-//       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
-//     },
-//     name: 'Cake Party!',
-//     symbol: 'BUSD-USDT SLP',
-//     tokenSymbol: 'BUSD',
-//     multiplier: '4X'
-//   },
-//   {
-//     pid: 11,
-//     lpAddresses: {
-//       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-//       56: '0xcFaFFc0728f1D2521E90A6A49e4bEc54D93c107a'
-//     },
-//     tokenAddresses: {
-//       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-//       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
-//     },
-//     name: 'Cake Party!',
-//     symbol: 'BUSD-DAI SLP',
-//     tokenSymbol: 'DAI',
-//     multiplier: '4X'
-//   },
-//   {
-//     pid: 12,
-//     lpAddresses: {
-//       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-//       56: '0xefD05F48e337A50CDF36c60baa32FE3d3a7aCbE6'
-//     },
-//     tokenAddresses: {
-//       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-//       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56'
-//     },
-//     name: 'Cake Party!',
-//     symbol: 'BUSD-USDC SLP',
-//     tokenSymbol: 'USDC',
-//     multiplier: '1X'
-//   },
-//   {
-//     pid: 13,
-//     lpAddresses: {
-//       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-//       56: '0x9897D186087e8aDb05B657B0DC9A326D898FF7B1'
-//     },
-//     tokenAddresses: {
-//       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-//       56: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3'
-//     },
-//     name: 'Cake Party!',
-//     symbol: 'DAI-USDT SLP',
-//     tokenSymbol: 'DAI',
-//     multiplier: '2X'
-//   },
-//   {
-//     pid: 14,
-//     lpAddresses: {
-//       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-//       56: '0xBB1F42E75C83917FdeDd25080dE5AA0E78c35f82'
-//     },
-//     tokenAddresses: {
-//       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-//       56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'
-//     },
-//     name: 'Cake Party!',
-//     symbol: 'USDC-USDT SLP',
-//     tokenSymbol: 'USDC',
-//     multiplier: '3X'
-//   },
-//   {
-//     pid: 15,
-//     lpAddresses: {
-//       97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-//       56: '0x68D93eFCd107A044F2dc201548B59A0EBF4181c6'
-//     },
-//     tokenAddresses: {
-//       97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-//       56: '0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d'
-//     },
-//     name: 'Cake Party!',
-//     symbol: 'DAI-USDC SLP',
-//     tokenSymbol: 'USDC',
-//     multiplier: '2X'
-//   }
+  
+
+  
 ]
 
 export const forShowPools = [
   {
     pid: 0,
     name: 'STAX Liquidity',
-    symbol: 'STAX-BNB',
-    tokenSymbol: 'STAX',
-    multiplier: '5X',
-  },
-  {
-    pid: 4,
-    symbol: 'STAX-BUSD',
-    tokenSymbol: 'STAX',
-    multiplier: '5X',
+    symbol: 'BUSD',
+    tokenSymbol: 'iSTAX',
+    multiplier: '1X',
   },
   {
     pid: 1,
-    symbol: 'BUSD-USDT',
-    tokenSymbol: 'BUSDUSDT',
-    multiplier: '3X',
+    name: 'STAX Liquidity',
+    symbol: 'STAX-BNB',
+    tokenSymbol: 'iSTAX',
+    multiplier: '5X',
   },
   {
     pid: 2,
-    symbol: 'BUSD-DAI',
-    tokenSymbol: 'BUSDDAI',
+    name: 'STAX Liquidity',
+    symbol: 'BUSD-USDT',
+    tokenSymbol: 'iSTAX',
     multiplier: '3X',
   },
   {
     pid: 3,
-    symbol: 'USDT-DAI',
-    tokenSymbol: 'USDTDAI',
-    multiplier: '3X',
-  },
-  {
-    pid: 4,
-    symbol: 'USDT-USDC',
-    tokenSymbol: 'USDTUSDC',
+    name: 'STAX Liquidity',
+    symbol: 'BUSD-DAI',
+    tokenSymbol: 'iSTAX',
     multiplier: '3X',
   }
 ]
