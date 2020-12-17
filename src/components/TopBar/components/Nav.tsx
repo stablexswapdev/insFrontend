@@ -9,13 +9,14 @@ const Nav: React.FC = () => {
         <StyledLink exact activeClassName="active" to="/">
           Home
         </StyledLink>
-        <StyledLink exact activeClassName="active" to="/staking">
-          Staking
-        </StyledLink>
+       
         <StyledLink exact activeClassName="active" to="/insurance">
-          Insurance
+          Insurance(New!)
         </StyledLink>
       </StyledNav>
+      <StyledLink exact activeClassName="active" to="/staking">
+          Staking(old)
+        </StyledLink>
       <ExternalLink href="https://trade.stablexswap.com">
         Swap(New!)
       </ExternalLink>
