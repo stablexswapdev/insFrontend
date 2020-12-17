@@ -60,7 +60,8 @@ const Farm: React.FC = () => {
 
         <PageHeader
           title=""
-          subtitle="STACK your STAX, to earn more STAX"
+          subtitle="Redeem your iSTAX for insurance coverage against any risks, such as
+          smart contract bugs, stablecoins breaking their pegs, or if the StableXswap team fails to fulfill their roadmap"
         />
         <Spacer size="lg"/>
         <StyledFarm>
