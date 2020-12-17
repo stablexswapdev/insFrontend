@@ -61,7 +61,7 @@ const Farm: React.FC = () => {
         <PageHeader
           title=""
           subtitle="Redeem your iSTAX for insurance coverage against any risks, such as
-          smart contract bugs, stablecoins breaking their pegs, or if the StableXswap team fails to fulfill their roadmap"
+          smart contract bugs, stablecoins breaking their pegs, or if the StableXswap team fails to fulfill roadmap"
         />
         <Spacer size="lg"/>
         <StyledFarm>
@@ -78,8 +78,7 @@ const Farm: React.FC = () => {
           </StyledCardsWrapper>
           <Spacer size="lg"/>
           <StyledInfo>
-            
-            👀 Stake your STAX or StableXSwap LP tokens for fixed durations to earn higher iSTAX rewards! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
+            This page is to redeem and use your iSTAX for coverage. To earn iSTAX👀, stake your STAX or StableXSwap LP tokens for fixed durations! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
           </StyledInfo>
           <Spacer size="lg"/>
         </StyledFarm>
