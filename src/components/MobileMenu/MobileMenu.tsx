@@ -36,6 +36,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({onDismiss, visible}) => {
                     <StyledLink
                         exact
                         activeClassName="active"
+                        to="/insurance"
+                        onClick={onDismiss}>
+                        🥩 Insurance
+                    </StyledLink>
+                    <StyledLink
+                        exact
+                        activeClassName="active"
                         to="/syrup"
                         onClick={onDismiss}>
                         🍯 STAX Pool

@@ -65,7 +65,7 @@ const Farm: React.FC = () => {
 
   return (
     <>
-      <Title>Stake FLIP tokens to stack STAX</Title>
+      <Title>Stake STAXLP (Stablecoins) or STAX tokens to stack STAX</Title>
       <StyledFarm>
         <StyledCardsWrapper>
           <StyledCardWrapper>

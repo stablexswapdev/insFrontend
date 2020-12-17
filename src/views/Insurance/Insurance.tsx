@@ -29,6 +29,7 @@ interface SyrupRowProps {
 const SyrupRow: React.FC<SyrupRowProps> = ({syrupAddress, sousId, tokenName, projectLink, multi}) => {
   const {ethereum} = useWallet()
 
+//   Update with iSTAX address
   const syrup = useMemo(() => {
     return getContract(ethereum as provider, '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4')
   }, [ethereum])
