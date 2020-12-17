@@ -12,6 +12,7 @@ import {
   contractAddresses,
   SUBTRACT_GAS_LIMIT,
   supportedPools,
+  iStaxStaking,
   sousChefTeam
 } from './constants.js'
 import * as Types from './types.js'
@@ -50,6 +51,13 @@ export class Contracts {
       }),
     )
 
+    this.insurancePools = iStaxStaking.map((pool) =>
+    Object.assign(pool, {
+      contractAddress: pool.contractAddress[networkId],
+      sousContract: new this.web3.eth.Contract(SousChefAbi),
+    }),
+  )
+
     this.setProvider(provider, networkId)
     this.setDefaultAccount(this.web3.eth.defaultAccount)
   }
@@ -75,6 +83,12 @@ export class Contracts {
     )
 
     this.sousChefs.forEach(
+      ({ contractAddress, sousContract }) => {
+        setProvider(sousContract, contractAddress)
+      },
+    )
+
+    this.insurancePools.forEach(
       ({ contractAddress, sousContract }) => {
         setProvider(sousContract, contractAddress)
       },

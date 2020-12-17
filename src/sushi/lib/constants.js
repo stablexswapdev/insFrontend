@@ -109,6 +109,68 @@ export const sousChefTeam = [
   },
 ]
 
+export const iStaxStaking = [
+  {
+    sousId: 0,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0x252B23B524F8a93506c02ff355780Ced62EA4004',
+    },
+    tokenName: 'StableXSwap Contract Coverage',
+    tokenPerBlock: "0",
+    multi: '2021-03-31'
+  },
+  {
+    sousId: 1,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0x2C43BC85A4a08757666219E0305a98b6CBdbb7eA',
+    },
+    tokenName: 'Staking Contract Coverage',
+    tokenPerBlock: "0",
+    multi: '2021-03-31'
+  },
+  {
+    sousId: 2,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0xCe4Cf2251489bEe010719c5e4cfd8AFcc3d1D376',
+    },
+    tokenName: 'USDTDOWN',
+    tokenPerBlock: "0",
+    multi: '2021-03-31'
+  },
+  {
+    sousId: 3,
+    contractAddress: {
+      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      56: '0xB561f9f117acaa5512f2790354f59202b0C3642B',
+    },
+    tokenName: 'STAX2W',
+    tokenPerBlock: "2",
+    multi: 'x2'
+  },
+  {
+    sousId: 4,
+    contractAddress: {
+      97: '0x108f53C0e26C005B9DC40131de7B0fb9D3303757',
+      56: '0xb4239e11CC41562288cF9f9162540066b491D2c3',
+    },
+    tokenName: 'STAX1M',
+    tokenPerBlock: "2",
+    multi: 'x3'
+  },
+  {
+    sousId: 5,
+    contractAddress: {
+      97: '0x6dA4eaff1B3fbe39E7915399EB3FD957B32608E7',
+      56: '0x0c0C475e32212b748c328E451Ab3862FfE07369E',
+    },
+    tokenName: 'STAX1Y',
+    multi: 'x8'
+  }
+]
+
 // BUSD-BNB LP
 // 0x1b96b92314c44b159149f7e0303511fb2fc4774f
 // BAKE-BNB LP

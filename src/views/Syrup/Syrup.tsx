@@ -16,7 +16,7 @@ import {getPools} from '../../sushi/utils'
 
 import PoolCard from './components/PoolCard'
 import Coming from './components/Coming'
-import {sousChefTeam} from '../../sushi/lib/constants';
+import {sousChefTeam} from '../../sushi/lib/constants'
 
 interface SyrupRowProps {
   syrupAddress: string

@@ -12,11 +12,11 @@ import Button from '../../components/Button'
 import PageHeader from '../../components/PageHeader'
 import {getContract} from '../../utils/erc20'
 import useSushi from '../../hooks/useSushi'
-import {getPools} from '../../sushi/utils'
+import {getInsurancePools} from '../../sushi/utils'
 
 import PoolCard from './components/PoolCard'
 import Coming from './components/Coming'
-import {sousChefTeam} from '../../sushi/lib/constants';
+import {iStaxStaking} from '../../sushi/lib/constants';
 
 interface SyrupRowProps {
   syrupAddress: string
@@ -48,7 +48,7 @@ const SyrupRow: React.FC<SyrupRowProps> = ({syrupAddress, sousId, tokenName, pro
 
 const Farm: React.FC = () => {
   const sushi = useSushi()
-  const pools = getPools(sushi) || sousChefTeam
+  const pools = getInsurancePools(sushi) || iStaxStaking
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -59,7 +59,7 @@ const Farm: React.FC = () => {
       <>
 
         <PageHeader
-          title="PREVIOUS LOCKED POOLS"
+          title=""
           subtitle="STACK your STAX, to earn more STAX"
         />
         <Spacer size="lg"/>

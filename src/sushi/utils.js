@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import { ethers } from 'ethers'
-import {sousChefTeam} from './lib/constants'
+import {iStaxStaking, sousChefTeam} from './lib/constants'
 
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -42,6 +42,10 @@ export const getSushiContract = (sushi) => {
 }
 export const getSousChefContract = (sushi, sousId) => {
   return sushi && sushi.contracts && sushi.contracts.sousChefs.filter(chef => chef.sousId === sousId)[0]?.sousContract
+}
+
+export const getInsurancePoolsContract = (sushi, sousId) => {
+  return sushi && sushi.contracts && sushi.contracts.insurancePools.filter(chef => chef.sousId === sousId)[0]?.sousContract
 }
 
 export const getFarms = (sushi) => {
@@ -97,6 +101,31 @@ export const getPools = (sushi)  => {
     )
   : [];
   if(pools.length ==0) return sousChefTeam;
+
+  return pools
+}
+
+export const getInsurancePools = (sushi)  => {
+  const pools = sushi
+    ? sushi.contracts.insurancePools.map(
+      ({
+        sousId,
+        sousContract,
+        contractAddress,
+        tokenName,
+        projectLink,
+        multi
+      }) => ({
+        sousId,
+        sousContract,
+        contractAddress,
+        tokenName,
+        projectLink,
+        multi
+      }),
+    )
+  : [];
+  if(pools.length ==0) return iStaxStaking;
 
   return pools
 }
