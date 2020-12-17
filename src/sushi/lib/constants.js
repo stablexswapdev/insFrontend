@@ -25,7 +25,8 @@ export const INTEGERS = {
 export const contractAddresses = {
   sushi: {
     // updated for testnet
-    97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
+    // 97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
+    97: '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1', 
     56:  '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     // 56: '0xbbB2aaEB8c9dA72bb7faDB42A9c84AACF26974Fd'
   },
