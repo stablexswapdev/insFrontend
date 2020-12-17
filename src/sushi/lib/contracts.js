@@ -5,6 +5,7 @@ import SushiAbi from './abi/sushi.json'
 import SyrupAbi from './abi/syrup.json'
 import UNIV2PairAbi from './abi/uni_v2_lp.json'
 import SousChefAbi from './abi/sousChef.json'
+import iPoolChefAbi from './abi/iPoolChef.json'
 import LotteryAbi from './abi/lottery.json'
 import LotteryNFTAbi from './abi/lotteryNft.json'
 import WETHAbi from './abi/weth.json'
@@ -12,7 +13,7 @@ import {
   contractAddresses,
   SUBTRACT_GAS_LIMIT,
   supportedPools,
-  iStaxStaking,
+  iPoolChefTeam,
   sousChefTeam
 } from './constants.js'
 import * as Types from './types.js'
@@ -31,6 +32,7 @@ export class Contracts {
     this.masterChef = new this.web3.eth.Contract(MasterChefAbi)
     this.syrup = new this.web3.eth.Contract(SyrupAbi)
     this.sousChef = new this.web3.eth.Contract(SousChefAbi)
+    this.iPoolChef = new this.web3.eth.Contract(iPoolChefAbi)
     this.weth = new this.web3.eth.Contract(WETHAbi)
     this.lottery = new this.web3.eth.Contract(LotteryAbi)
     this.lotteryNft = new this.web3.eth.Contract(LotteryNFTAbi)
@@ -51,10 +53,10 @@ export class Contracts {
       }),
     )
 
-    this.insurancePools = iStaxStaking.map((pool) =>
+    this.iPoolChefs = iPoolChefTeam.map((pool) =>
     Object.assign(pool, {
       contractAddress: pool.contractAddress[networkId],
-      sousContract: new this.web3.eth.Contract(SousChefAbi),
+      iPoolContract: new this.web3.eth.Contract(iPoolChefAbi),
     }),
   )
 
@@ -74,7 +76,7 @@ export class Contracts {
     setProvider(this.masterChef, contractAddresses.masterChef[networkId])
     setProvider(this.weth, contractAddresses.weth[networkId])
     setProvider(this.sousChef, contractAddresses.sousChef[networkId])
-
+    setProvider(this.iPoolChef, contractAddresses.iPoolChef[networkId])
     this.pools.forEach(
       ({ lpContract, lpAddress, tokenContract, tokenAddress }) => {
         setProvider(lpContract, lpAddress)
@@ -88,9 +90,9 @@ export class Contracts {
       },
     )
 
-    this.insurancePools.forEach(
-      ({ contractAddress, sousContract }) => {
-        setProvider(sousContract, contractAddress)
+    this.iPoolChefs.forEach(
+      ({ contractAddress, iPoolContract }) => {
+        setProvider(iPoolContract, contractAddress)
       },
     )
   }
@@ -100,6 +102,7 @@ export class Contracts {
     this.masterChef.options.from = account
     this.syrup.options.from = account
     this.sousChef.options.from = account
+    this.iPoolChef.options.from = account
   }
 
   async callContractFunction(method, options) {

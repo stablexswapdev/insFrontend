@@ -36,12 +36,16 @@ export const contractAddresses = {
     56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4',
   },
   masterChef: {
-    97: '0x683B1d0CC12c8862Ce102773B4E8fFd6370d3eDA',
+    97: '0xF6086E6f4272032B463fcA37c9C74568e58cA85C',
     56: '0xC80991F9106e26e43Bf1C07C764829a85f294C71', //  real iSTAX chef
     // 56: '0x39447351Fe7939C064CDD9A258F22FC76233E28e'
   },
   sousChef: {
-    97: '0x683B1d0CC12c8862Ce102773B4E8fFd6370d3eDA',
+    97: '0xF6086E6f4272032B463fcA37c9C74568e58cA85C',
+    56: '0x6ab8463a4185b80905e05a9ff80a2d6b714b9e95', //  real stax
+  },
+  iPoolChef: {
+    97: '0xF6086E6f4272032B463fcA37c9C74568e58cA85C',
     56: '0x6ab8463a4185b80905e05a9ff80a2d6b714b9e95', //  real stax
   },
   weth: {
@@ -112,19 +116,20 @@ export const sousChefTeam = [
   },
 ]
 
-export const iStaxStaking = [
+export const iPoolChefTeam = [
   {
-    sousId: 0,
+    iPoolId: 0,
     contractAddress: {
-      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
-      56: '0x252B23B524F8a93506c02ff355780Ced62EA4004',
+      97: '0x2e19c7f6131Bf3d6fb15efF18c1CDC2f2Ee437dc',
+      // 56: '0x252B23B524F8a93506c02ff355780Ced62EA4004',
+      
     },
     tokenName: 'SWAPSC',
     tokenPerBlock: "0",
     multi: '31-03-21'
   },
   {
-    sousId: 1,
+    iPoolId: 1,
     contractAddress: {
       97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
       56: '0x2C43BC85A4a08757666219E0305a98b6CBdbb7eA',

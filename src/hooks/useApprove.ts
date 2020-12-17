@@ -5,7 +5,7 @@ import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { Contract } from 'web3-eth-contract'
 
-import { approve, getMasterChefContract, getSousChefContract } from '../sushi/utils'
+import { approve, getMasterChefContract, getSousChefContract, getiPoolChefContract } from '../sushi/utils'
 
 const useApprove = (lpContract: Contract) => {
   const { account }: { account: string; ethereum: provider } = useWallet()
@@ -40,5 +40,22 @@ export const useSousApprove = (lpContract: Contract, sousId) => {
 
   return { onApprove: handleApprove }
 }
+
+// export const iStaxApprove = (lpContract: Contract, iPoolId) => {
+//   const { account }: { account: string; ethereum: provider } = useWallet()
+//   const sushi = useSushi()
+//   const insurancePoolsContract = getiPoolChefContract(sushi, iPoolId)
+
+//   const handleApprove = useCallback(async () => {
+//     try {
+//       const tx = await approve(lpContract, insurancePoolsContract, account)
+//       return tx
+//     } catch (e) {
+//       return false
+//     }
+//   }, [account, lpContract, insurancePoolsContract])
+
+//   return { onApprove: handleApprove }
+// }
 
 export default useApprove

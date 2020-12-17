@@ -7,7 +7,7 @@ import { provider } from 'web3-core'
 import { Contract } from 'web3-eth-contract'
 
 import { getAllowance } from '../utils/erc20'
-import { getMasterChefContract, getSousChefContract } from '../sushi/utils'
+import { getMasterChefContract, getSousChefContract, getiPoolChefContract } from '../sushi/utils'
 
 const useAllowance = (lpContract: Contract) => {
   const [allowance, setAllowance] = useState(new BigNumber(0))
@@ -60,5 +60,31 @@ export const useSousAllowance = (lpContract: Contract, sousId) => {
 
   return allowance
 }
+
+// export const useiStaxAllowance = (lpContract: Contract, iPoolId) => {
+//   const [allowance, setAllowance] = useState(new BigNumber(0))
+//   const { account }: { account: string; ethereum: provider } = useWallet()
+//   const sushi = useSushi()
+//   const insurancePoolsContract = getiPoolChefContract(sushi, iPoolId)
+
+//   const fetchAllowance = useCallback(async () => {
+//     const allowance = await getAllowance(
+//       lpContract,
+//       insurancePoolsContract,
+//       account,
+//     )
+//     setAllowance(new BigNumber(allowance))
+//   }, [account, insurancePoolsContract, lpContract])
+
+//   useEffect(() => {
+//     if (account && insurancePoolsContract && lpContract) {
+//       fetchAllowance()
+//     }
+//     let refreshInterval = setInterval(fetchAllowance, 10000)
+//     return () => clearInterval(refreshInterval)
+//   }, [account, insurancePoolsContract, lpContract])
+
+//   return allowance
+// }
 
 export default useAllowance

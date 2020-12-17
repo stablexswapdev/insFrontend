@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import { ethers } from 'ethers'
-import {iStaxStaking, sousChefTeam} from './lib/constants'
+import {iPoolChefTeam, sousChefTeam} from './lib/constants'
 
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -19,6 +19,9 @@ export const getMasterChefAddress = (sushi) => {
 }
 export const getSousChefAddress = (sushi) => {
   return sushi && sushi.sousChefAddress
+}
+export const getiPoolChefAddress = (sushi) => {
+  return sushi && sushi.iPoolChefAddress
 }
 
 export const getSushiAddress = (sushi) => {
@@ -44,8 +47,8 @@ export const getSousChefContract = (sushi, sousId) => {
   return sushi && sushi.contracts && sushi.contracts.sousChefs.filter(chef => chef.sousId === sousId)[0]?.sousContract
 }
 
-export const getInsurancePoolsContract = (sushi, sousId) => {
-  return sushi && sushi.contracts && sushi.contracts.insurancePools.filter(chef => chef.sousId === sousId)[0]?.sousContract
+export const getiPoolChefContract = (sushi, iPoolId) => {
+  return sushi && sushi.contracts && sushi.contracts.iPoolChefs.filter(chef => chef.iPoolId === iPoolId)[0]?.iPoolContract
 }
 
 export const getFarms = (sushi) => {
@@ -105,9 +108,9 @@ export const getPools = (sushi)  => {
   return pools
 }
 
-export const getInsurancePools = (sushi)  => {
+export const getiPools = (sushi)  => {
   const pools = sushi
-    ? sushi.contracts.insurancePools.map(
+    ? sushi.contracts.iPoolChefs.map(
       ({
         sousId,
         sousContract,
@@ -125,7 +128,7 @@ export const getInsurancePools = (sushi)  => {
       }),
     )
   : [];
-  if(pools.length ==0) return iStaxStaking;
+  if(pools.length ==0) return iPoolChefTeam;
 
   return pools
 }
@@ -146,6 +149,8 @@ export const getSousEarned = async (sousChefContract, account) => {
   console.log('ddd', sousChefContract.options.address, account)
   return sousChefContract.methods.pendingReward(account).call()
 }
+
+
 
 export const getTotalStaked = async (sushi, sousChefContract) => {
   const syrup = await getSyrupContract(sushi)
@@ -342,10 +347,33 @@ export const getSousStartBlock = async (sousChefContract) => {
     return 0
   }
 }
+
+// fix later endblock
 export const getSousEndBlock = async (sousChefContract) => {
   try {
     const endBlcok = await sousChefContract.methods
       .endBlock()
+      .call()
+    return endBlcok
+  } catch {
+    return 0
+  }
+}
+
+export const getiPoolStartBlock = async (insurancePoolsContract) => {
+  try {
+    const startBlock = await insurancePoolsContract.methods
+      .startCoverageBlock()
+      .call()
+    return startBlock
+  } catch {
+    return 0
+  }
+}
+export const getiPoolEndBlock = async (insurancePoolsContract) => {
+  try {
+    const endBlcok = await insurancePoolsContract.methods
+      .matureBlock()
       .call()
     return endBlcok
   } catch {

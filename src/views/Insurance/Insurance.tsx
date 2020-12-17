@@ -12,11 +12,11 @@ import Button from '../../components/Button'
 import PageHeader from '../../components/PageHeader'
 import {getContract} from '../../utils/erc20'
 import useSushi from '../../hooks/useSushi'
-import {getInsurancePools} from '../../sushi/utils'
+import {getiPools} from '../../sushi/utils'
 
 import PoolCard from './components/PoolCard'
 import Coming from './components/Coming'
-import {iStaxStaking} from '../../sushi/lib/constants';
+import {iPoolChefTeam} from '../../sushi/lib/constants';
 
 interface SyrupRowProps {
   syrupAddress: string
@@ -48,7 +48,7 @@ const SyrupRow: React.FC<SyrupRowProps> = ({syrupAddress, sousId, tokenName, pro
 
 const Farm: React.FC = () => {
   const sushi = useSushi()
-  const pools = getInsurancePools(sushi) || iStaxStaking
+  const pools = getiPools(sushi) || iPoolChefTeam
 
   useEffect(() => {
     window.scrollTo(0, 0)
