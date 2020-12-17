@@ -131,7 +131,7 @@ export const iPoolChefTeam = [
   {
     iPoolId: 1,
     contractAddress: {
-      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      97: '0x9944bbB265661304c25B1b5aDd13d86adB470C11',
       56: '0x2C43BC85A4a08757666219E0305a98b6CBdbb7eA',
     },
     tokenName: 'STAKESC',
@@ -141,7 +141,7 @@ export const iPoolChefTeam = [
   {
     sousId: 2,
     contractAddress: {
-      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      97: '0x75d06Fe988d1541c04525Dfee1768b1f904f9195',
       56: '0xCe4Cf2251489bEe010719c5e4cfd8AFcc3d1D376',
     },
     tokenName: 'USDT ⬇️',
@@ -151,7 +151,7 @@ export const iPoolChefTeam = [
   {
     sousId: 3,
     contractAddress: {
-      97: '0x6Da1Bd6b8Ee135e96DefC087d83d99BE73965DDe',
+      97: '0x4492544060C5Ec18E0E6a744B666bcE3D8FF260E',
       56: '0xB561f9f117acaa5512f2790354f59202b0C3642B',
     },
     tokenName: 'DAI ⬆️',
@@ -161,7 +161,7 @@ export const iPoolChefTeam = [
   {
     sousId: 4,
     contractAddress: {
-      97: '0x108f53C0e26C005B9DC40131de7B0fb9D3303757',
+      97: '0xb0E38B2569220F5E33eBFF6E6D1Bff28914AaAc6',
       56: '0xb4239e11CC41562288cF9f9162540066b491D2c3',
     },
     tokenName: 'DAI ⬇️',
@@ -171,7 +171,7 @@ export const iPoolChefTeam = [
   {
     sousId: 5,
     contractAddress: {
-      97: '0x6dA4eaff1B3fbe39E7915399EB3FD957B32608E7',
+      97: '0x91242B317F5791574AE617513A2c580c09Bb9C39',
       56: '0x0c0C475e32212b748c328E451Ab3862FfE07369E',
     },
     tokenName: 'MAP20Q4',

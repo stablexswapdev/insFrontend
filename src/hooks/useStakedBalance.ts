@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import { useWallet } from 'use-wallet'
 
-import { getStaked, getMasterChefContract, getSousChefContract, getSousStaked, getTotalStaked } from '../sushi/utils'
+import { getStaked, getMasterChefContract, getSousChefContract, getiPoolChefContract, getSousStaked, getiPoolStaked, getTotalStaked, getiTotalStaked } from '../sushi/utils'
 import useSushi from './useSushi'
 import useBlock from './useBlock'
 
@@ -57,7 +57,8 @@ export const useSousTotalStaked = (sousId) =>{
    const block = useBlock()
 
    const fetchBalance = useCallback(async () => {
-     const balance = await getTotalStaked(sushi, sousChefContract)
+    //  await getTotalStaked(sushi, sousChefContract)
+     const balance = 0 // for now
      setBalance(new BigNumber(balance))
    }, [account, sushi, sousChefContract])
 
@@ -68,6 +69,48 @@ export const useSousTotalStaked = (sousId) =>{
    }, [account, setBalance, block, sushi])
 
    return balance
+}
+
+export const UseiPoolStakedBalance = (iPoolId) =>{
+  const [balance, setBalance] = useState(new BigNumber(0))
+  const { account }: { account: string } = useWallet()
+  const sushi = useSushi()
+  const iPoolChefContract = getiPoolChefContract(sushi, iPoolId)
+  const block = useBlock()
+
+  const fetchBalance = useCallback(async () => {
+    const balance = await getiPoolStaked(iPoolChefContract, account)
+    setBalance(new BigNumber(balance))
+  }, [account, sushi, iPoolChefContract])
+
+  useEffect(() => {
+    if (account && sushi) {
+      fetchBalance()
+    }
+  }, [account, setBalance, block, sushi])
+
+  return balance
+}
+
+export const UseiPoolTotalStaked = (iPoolId) =>{
+  const [balance, setBalance] = useState(new BigNumber(0))
+  const { account }: { account: string } = useWallet()
+  const sushi = useSushi()
+  const iPoolChefContract = getiPoolChefContract(sushi, iPoolId)
+  const block = useBlock()
+
+  const fetchBalance = useCallback(async () => {
+    const balance = await getiTotalStaked(sushi, iPoolChefContract)
+    setBalance(new BigNumber(balance))
+  }, [account, sushi, iPoolChefContract])
+
+  useEffect(() => {
+    if (account && sushi) {
+      fetchBalance()
+    }
+  }, [account, setBalance, block, sushi])
+
+  return balance
 }
 
 export default useStakedBalance

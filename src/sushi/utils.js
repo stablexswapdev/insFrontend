@@ -153,9 +153,17 @@ export const getSousEarned = async (sousChefContract, account) => {
 
 
 export const getTotalStaked = async (sushi, sousChefContract) => {
+  // const syrup = await getSyrupContract(sushi)
+  return 0
+  // sousChefContract.methods
+    // .poolAmount()
+    // .call()
+}
+
+export const getiTotalStaked = async (sushi, iPoolChefContract) => {
   const syrup = await getSyrupContract(sushi)
-  return sousChefContract.methods
-    .poolAmount()
+  return iPoolChefContract.methods
+    .totalDeposited()
     .call()
 }
 
@@ -328,6 +336,18 @@ export const getStaked = async (masterChefContract, pid, account) => {
 export const getSousStaked = async (sousChefContract, account) => {
   try {
     const amount = await sousChefContract.methods
+      .poolsInfo(account)
+      .call()
+    return new BigNumber(amount)
+  } catch(err) {
+    console.log(err)
+    return new BigNumber(0)
+  }
+}
+
+export const getiPoolStaked = async (iPoolChefContract, account) => {
+  try {
+    const amount = await iPoolChefContract.methods
       .poolsInfo(account)
       .call()
     return new BigNumber(amount)

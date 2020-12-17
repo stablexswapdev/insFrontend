@@ -127,7 +127,7 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
   {stakingStatus !== 3  &&  <Value value={getBalanceNumber(earnings)} /> }
   {stakingStatus !== 3  &&  <Label text={` iSTAX earned`} /> }
       
-{/*            {
+           {/* {
               account && harvest && leftBlockText==='Finished' &&
               <HarvestButton
                 disabled={!earnings.toNumber() || pendingTx}
@@ -138,24 +138,25 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
                   setPendingTx(false)
                 }}
               />
-            }*/}
+            } */}
           </StyledCardContent>
 
           <StyledCardActions>
             {!account &&  <Button onClick={handleUnlockClick} size="md" text="Unlock Wallet" />}
+             
             { account && (!allowance.toNumber() && stakingStatus===1 ? (
-              <Label text="Temporarily unavailable, please simply HODL for Flex Staking Rewards"/>
-              // <Button
-              //   disabled={leftBlockText==='Finished' ||  requestedApproval}
-              //   onClick={handleApprove}
-              //   text={`Approve STAX`}
-              // />
+              // <Label text="Temporarily unavailable, please simply HODL for Flex Staking Rewards"/>
+              <Button
+                disabled={leftBlockText==='Finished' ||  requestedApproval}
+                onClick={handleApprove}
+                text={`Approve STAX`}
+              />
             ) 
             : (
               <>
-              {stakingStatus===3 &&
-                <Label text="Funds have been manually distributed, Please check the distribution stats here:"  />   &&
-                <a target = "_blank" rel = "noopener noreferrer" href="https://tinyurl.com/2wstax">Link To Google Sheets</a>            }
+              {stakingStatus===3}
+                {/* // <Label text="Funds have been manually distributed, Please check the distribution stats here:"  />   &&
+                // <a target = "_blank" rel = "noopener noreferrer" href="https://tinyurl.com/2wstax">Link To Google Sheets</a>            } */}
 
                 {/* {stakingStatus===3 &&
                 <Button
