@@ -135,7 +135,7 @@ export const useCakePrice = () => {
 
       console.log(bnbPrice)
 
-      const cake = await getBalance(ethereum, '0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4', '0x7FB0017195470bc6978659396eC9D750A35C51fE')
+      const cake = await getBalance(ethereum, '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC', '0x7FB0017195470bc6978659396eC9D750A35C51fE')
       const bnb1 = await getBalance(ethereum, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', '0x7FB0017195470bc6978659396eC9D750A35C51fE')
       const cakebnb = getBalanceNumber(new BigNumber(bnb1))/getBalanceNumber(new BigNumber(cake))
 

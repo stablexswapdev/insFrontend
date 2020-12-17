@@ -24,17 +24,19 @@ export const INTEGERS = {
 
 export const contractAddresses = {
   sushi: {
-    97: '0xEc4070F7Cb3Cb944Af729D8c23F3350dF24f1003',
+    // updated for testnet
+    97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
     56:  '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     // 56: '0xbbB2aaEB8c9dA72bb7faDB42A9c84AACF26974Fd'
   },
   syrup: {
-    97: '0xEc4070F7Cb3Cb944Af729D8c23F3350dF24f1003',
+    // updated for testnet iSTAX
+    97: '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1',
     56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4',
   },
   masterChef: {
     97: '0x683B1d0CC12c8862Ce102773B4E8fFd6370d3eDA',
-    56: '0xC80991F9106e26e43Bf1C07C764829a85f294C71', //  real stax chef
+    56: '0xC80991F9106e26e43Bf1C07C764829a85f294C71', //  real iSTAX chef
     // 56: '0x39447351Fe7939C064CDD9A258F22FC76233E28e'
   },
   sousChef: {
@@ -166,7 +168,7 @@ export const iStaxStaking = [
       97: '0x6dA4eaff1B3fbe39E7915399EB3FD957B32608E7',
       56: '0x0c0C475e32212b748c328E451Ab3862FfE07369E',
     },
-    tokenName: 'ROADMAP20Q4',
+    tokenName: 'MAP20Q4',
     multi: '31-03-21'
   }
   // ,
@@ -176,7 +178,7 @@ export const iStaxStaking = [
   //     97: '0x6dA4eaff1B3fbe39E7915399EB3FD957B32608E7',
   //     56: '0x0c0C475e32212b748c328E451Ab3862FfE07369E',
   //   },
-  //   tokenName: 'ROADMAP21Q1',
+  //   tokenName: 'MAP21Q1',
   //   multi: '31-03-21'
   // }
 ]
@@ -197,7 +199,7 @@ export const supportedPools = [
       56: '0x7FB0017195470bc6978659396eC9D750A35C51fE'
     },
     tokenAddresses: {
-      97: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+      97: '0x869446a92293DE6cEbb1b71CfcA6bd48f6bef6fC',
       56: '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4'
     },
     name: 'STAX STAKING',

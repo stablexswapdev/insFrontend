@@ -45,7 +45,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({onDismiss, visible}) => {
                         activeClassName="active"
                         to="/syrup"
                         onClick={onDismiss}>
-                        🍯 STAX Pool
+                        🍯 iSTAX Pool
                     </StyledLink>
                     <a style={{
                         paddingTop: "0.6em",

@@ -78,7 +78,7 @@ const Farm: React.FC = () => {
           </StyledCardsWrapper>
           <Spacer size="lg"/>
           <StyledInfo>
-            This page is to redeem and use your iSTAX for coverage. To earn iSTAX👀, stake your STAX or StableXSwap LP tokens for fixed durations! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
+            This page is to redeem and use your iSTAX for coverage. To earn iSTAX👀, stake your iSTAX or StableXSwap LP tokens for fixed durations! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
           </StyledInfo>
           <Spacer size="lg"/>
         </StyledFarm>

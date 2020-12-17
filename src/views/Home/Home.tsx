@@ -39,7 +39,7 @@ const Home: React.FC = () => {
     
          <Spacer />{' '}
          <StyledInfo>
-           <a
+           {/* <a
             target="_blank" 
             href="https://trade.stablexswap.com?ref=homepage"
           >
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             target="_blank"
             href="https://exchange.pancakeswap.finance/#/add/ETH/0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4"
           >
-            ➡️ Add STAX Liquidity{' '}
+            ➡️ Add iSTAX Liquidity{' '}
           </a>
           <br />
           <a
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
             href="https://exchange.pancakeswap.finance/#/swap?outputCurrency=0x0da6ed8b13214ff28e9ca979dd37439e8a88f6c4"
           >
             ➡️ Buy STAX{' '}
-          </a>
+          </a> */}
         </StyledInfo>
         
         <Spacer />{' '}

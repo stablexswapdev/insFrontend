@@ -89,7 +89,7 @@ const Balances: React.FC = () => {
         <Card>
           <CardContent>
             <StyledBalances>
-              <SLabel>Your STAX Balance</SLabel>
+              <SLabel>Your iSTAX Balance</SLabel>
               <StyledBalance>
                 <div style={{ flex: 1 }}>
                   <Value
@@ -114,7 +114,7 @@ const Balances: React.FC = () => {
         <Card>
           <CardContent>
             <StyledBalances>
-              <SLabel>Total STAX Supply</SLabel>
+              <SLabel>Total iSTAX Supply</SLabel>
               <StyledBalance>
                 <Value
                   value={

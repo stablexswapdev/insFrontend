@@ -44,9 +44,9 @@ const DisclaimerModal: React.FC<DisclaimerModal> = ({
     } else {
       return (
         <div>
-          <p>Attention STAX Uniswap LPs</p>
+          <p>Attention iSTAX Uniswap LPs</p>
           <p>
-            The only Uniswap pool that is compatible with STAX is STAX/yCRV
+            The only Uniswap pool that is compatible with iSTAX is STAX/yCRV
             (Curve yPool tokens)
           </p>
           <p>Providing liquidity for other Uniswap pools is dangerous</p>

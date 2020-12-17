@@ -125,7 +125,7 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
           <StyledCardContent>
   {stakingStatus === 3 && <Label text={"Campaign over"}/> }
   {stakingStatus !== 3  &&  <Value value={getBalanceNumber(earnings)} /> }
-  {stakingStatus !== 3  &&  <Label text={`STAX earned`} /> }
+  {stakingStatus !== 3  &&  <Label text={` iSTAX earned`} /> }
       
 {/*            {
               account && harvest && leftBlockText==='Finished' &&
@@ -176,7 +176,7 @@ const PoolCard: React.FC<HarvestProps> = ({ syrup, sousId, tokenName, projectLin
 
           <StyledCardFooter>
             <p>
-              Total STAX staked: <SmallValue value={getBalanceNumber(totalStaked)} /> <br/>
+              Total iSTAX staked: <SmallValue value={getBalanceNumber(totalStaked)} /> <br/>
              {leftBlockText}
             </p>
           </StyledCardFooter>

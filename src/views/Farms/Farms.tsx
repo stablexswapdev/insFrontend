@@ -29,7 +29,7 @@ const Farms: React.FC<FarmsProps> = ({removed}) => {
         {true ? (
           <>
             <Route exact path={path}>
-              <Title>Stake StableXSwap LP tokens and STAX to stack iSTAX</Title>
+              <Title>Stake StableXSwap LP tokens and iSTAX to stack iSTAX</Title>
               <StyledLink exact activeClassName="active" to="/staking">
                 Staking
               </StyledLink>

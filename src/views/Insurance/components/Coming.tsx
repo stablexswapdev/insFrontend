@@ -54,7 +54,7 @@ const Coming: React.FC = () => {
 
           <StyledCardFooter>
             <p>
-              Total STAX staked: 0 <br/>
+              Total iSTAX staked: 0 <br/>
              Farming starts in ??? Blocks
             </p>
           </StyledCardFooter>

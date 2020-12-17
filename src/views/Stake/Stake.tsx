@@ -76,9 +76,9 @@ const Farm: React.FC = () => {
           <PageHeader
             icon={<img src={chef} height="90" />}
             title="Stake Cake, get STAX."
-            subtitle="STAX holders proportionally split 25% of STAX block emissions each day (10 STAX per block), Rewards are distributed each block. STAX will also be used to for the PancakeSwap Lottery and general governance. "
+            subtitle="STAX holders proportionally split 25% of iSTAX block emissions each day (10 iSTAX per block), Rewards are distributed each block. iSTAX will also be used to for the PancakeSwap Lottery and general governance. "
           />
-          <Title>1 STAX = 1 STAX</Title>
+          <Title>1 iSTAX = 1 STAX</Title>
           <Title>You can swap back anytime</Title>
           <Spacer size="lg" />
           <StyledFarm>
@@ -101,8 +101,8 @@ const Farm: React.FC = () => {
             </StyledCardsWrapper>
             <Spacer size="lg" />
             <StyledInfo>
-              ⭐️ Every time you stake and unstake STAX tokens, the contract will
-              automagically harvest STAX rewards for you!
+              ⭐️ Every time you stake and unstake iSTAX tokens, the contract will
+              automagically harvest iSTAX rewards for you!
             </StyledInfo>
             <Spacer size="lg" />
           </StyledFarm>

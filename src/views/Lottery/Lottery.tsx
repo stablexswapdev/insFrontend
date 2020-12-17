@@ -30,7 +30,7 @@ const Farm: React.FC = () => {
 
     const lotteryPrizeAmount = '100,000,000'
 
-    const subtitleText = 'Spend STAX to buy tickets, contributing to the lottery pot. Ticket purchases end approx. 30 minutes before lottery. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers!'
+    const subtitleText = 'Spend iSTAX to buy tickets, contributing to the lottery pot. Ticket purchases end approx. 30 minutes before lottery. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers!'
 
     // return (
     //     <Switch>

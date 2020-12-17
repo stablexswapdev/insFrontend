@@ -16,7 +16,7 @@ import {getPools} from '../../sushi/utils'
 
 import PoolCard from './components/PoolCard'
 import Coming from './components/Coming'
-import {sousChefTeam} from '../../sushi/lib/constants'
+import {sousChefTeam} from '../../sushi/lib/constants';
 
 interface SyrupRowProps {
   syrupAddress: string
@@ -30,7 +30,7 @@ const SyrupRow: React.FC<SyrupRowProps> = ({syrupAddress, sousId, tokenName, pro
   const {ethereum} = useWallet()
 
   const syrup = useMemo(() => {
-    return getContract(ethereum as provider, '0x0Da6Ed8B13214Ff28e9Ca979Dd37439e8a88F6c4')
+    return getContract(ethereum as provider, '0x29f5b2959c1b0FE96985799Bd2E6c36187A16Ff1')
   }, [ethereum])
 
   return (
@@ -77,7 +77,7 @@ const Farm: React.FC = () => {
           <Spacer size="lg"/>
           <StyledInfo>
             
-            👀 Stake your STAX or StableXSwap LP tokens for fixed durations to earn higher iSTAX rewards! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
+            👀 Stake your iSTAX or StableXSwap LP tokens for fixed durations to earn higher iSTAX rewards! Rewards will be calculated per block but will be distributed at the end of each vesting period for each respective pool
           </StyledInfo>
           <Spacer size="lg"/>
         </StyledFarm>
