@@ -39,6 +39,13 @@ const Home: React.FC = () => {
     
          <Spacer />{' '}
          <StyledInfo>
+         {/* <a
+            target="_blank" 
+            href="https://trade.stablexswap.com?ref=homepage"
+          > */}
+            Welcome BSC's first insurance mining{' '}
+          {/* </a> */}
+
            {/* <a
             target="_blank" 
             href="https://trade.stablexswap.com?ref=homepage"

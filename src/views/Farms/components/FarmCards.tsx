@@ -133,14 +133,14 @@ const FarmCards: React.FC<FarmCardsProps> = ({ removed }) => {
                 <CardImage>
                   <Multiplier>{pool.multiplier}</Multiplier>
                 </CardImage>
-                <Lable>
+                <Label>
                   <span>Deposit</span>
                   <span className="right">{pool.symbol}</span>
-                </Lable>
-                <Lable>
+                </Label>
+                <Label>
                   <span>Earn</span>
-                  <span className="right">STAX</span>
-                </Lable>
+                  <span className="right">iSTAX</span>
+                </Label>
 
                 <Button
                   onClick={handleUnlockClick}
@@ -171,7 +171,7 @@ const FContent = styled.div`
 
 const CardImage = styled.div``
 
-const Lable = styled.div`
+const Label = styled.div`
   line-height: 1.5rem;
   color: ${(props) => props.theme.colors.secondary};
   > span {
@@ -280,18 +280,18 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
             <Multiplier>{farm.multiplier}</Multiplier>
           </CardImage>
           <StyledSpacer2 />
-          <Lable>
+          <Label>
             <span>Deposit</span>
             <span className="right">
               {farm.lpToken.toUpperCase().replace('PANSTAX', '')}
             </span>
-          </Lable>
-          <Lable>
+          </Label>
+          <Label>
             <span>Earn</span>
-            <span className="right">STAX</span>
-          </Lable>
+            <span className="right">iSTAX</span>
+          </Label>
           {!removed && !farm.id.includes('SLP') && (
-            <Lable>
+            <Label>
               <span>APY</span>
               <span className="right">
                 {farm.apy
@@ -302,16 +302,16 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, stakedValue, removed }) => {
                       .slice(0, -1)}%`
                   : 'Loading ...'}
               </span>
-            </Lable>
+            </Label>
           )}
 
           {!farm.id.includes('SLP') && (
-            <Lable>
+            <Label>
               <span>Liquidity</span>
               <span className="right">
                 ${parseInt(totalValue).toLocaleString()}
               </span>
-            </Lable>
+            </Label>
           )}
 
           <StyledSpacer2 />
